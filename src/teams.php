@@ -50,6 +50,12 @@
                         <a href="stats.php">Home</a>
                     </li>
                     <li>
+                        <a href="watchlist.php">Watchlist</a>
+                    </li>
+                    <li>
+                        <a href="league_play.php">League Play</a>
+                    </li>
+                    <li>
                         <a href="login.php">Sign Out</a>
                     </li>
                 </ul>

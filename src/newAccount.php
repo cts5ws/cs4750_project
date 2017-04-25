@@ -46,6 +46,9 @@
                     <li>
                         <a href="login.php">Home</a>
                     </li>
+                    <li>
+                        <a href="about.html">Our Team</a>
+                    </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

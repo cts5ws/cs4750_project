@@ -22,6 +22,9 @@ if(!isset($_SESSION["login"])){
     <!-- Custom CSS -->
     <link href="css/acc.css" rel="stylesheet">
 
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -71,7 +74,7 @@ if(!isset($_SESSION["login"])){
                 <div class= "col-lg-4 text-center">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h4><i class="fa fa-fw fa-truck"></i> Teams</h4>
+                        <h4><i class="fa fa-fw fa-dribbble"></i> Teams</h4>
                     </div>
                     <div class="panel-body">
                         <br>
@@ -85,7 +88,7 @@ if(!isset($_SESSION["login"])){
             	<div class= "col-lg-4 text-center">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h4><i class="fa fa-fw fa-truck"></i> Watchlist</h4>
+                        <h4><i class="fa fa-fw fa-list"></i> Watchlist</h4>
                     </div>
                     <div class="panel-body">
                         <br>
@@ -99,7 +102,7 @@ if(!isset($_SESSION["login"])){
             	<div class= "col-lg-4 text-center">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h4><i class="fa fa-fw fa-truck"></i> League Play</h4>
+                        <h4><i class="fa fa-fw fa-users"></i> League Play</h4>
                     </div>
                     <div class="panel-body">
                         <br>

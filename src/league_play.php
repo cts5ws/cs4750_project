@@ -51,6 +51,12 @@
                         <a href="stats.php">Home</a>
                     </li>
                     <li>
+                        <a href="teams.php">Teams</a>
+                    </li>
+                    <li>
+                        <a href="watchlist.php">Watchlist</a>
+                    </li>
+                    <li>
                         <a href="login.php">Sign Out</a>
                     </li>
                 </ul>
