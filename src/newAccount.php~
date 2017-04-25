@@ -10,9 +10,7 @@
 	    Confirm Password: <input type="password" name="password2"><br>
             Favorite Team:
 	    <select name="team">
-  	      <option value="University of Virginia">University of Virginia</option>
-	      <option value="Duke University">Duke University</option>
-	      <option value="University of North Carolina">University of North Carolina</option>
+  		<option value="University of Virginia">University of Virginia</option>
 	    </select><br>	 
 
 	    <input type="Submit"/>
