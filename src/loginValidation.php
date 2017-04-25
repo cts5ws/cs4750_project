@@ -23,6 +23,10 @@ if($rowcount == 0){
 
 } else {
  session_destroy();
+
+ session_start();
+ $_SESSION["login"] = "valid";
+
  header("Refresh:0; url=stats.html");
 }
 
