@@ -97,7 +97,7 @@ INSERT INTO `EnteredIn` (`League_ID`, `Watchlist_ID`) VALUES
 CREATE TABLE IF NOT EXISTS `Fan` (
   `Fan_ID` int(10) NOT NULL,
   `Username` varchar(20) NOT NULL,
-  `Password` varchar(20) NOT NULL
+  `Password` varchar(32) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
 
 --
