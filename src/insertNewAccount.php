@@ -26,7 +26,7 @@ if($rowcount !== 0){
  header("Refresh:0; url=newAccount.php");
 } else {
 
- mysqli_query($con, "insert into `Fan` (Username, Password) values ('$username','$password1')");
+ mysqli_query($con, "insert into `Fan` (Username, Password) values ('$username',MD5('$password1'))");
 
  $result = mysqli_query($con, "select Fan_ID from `Fan` where Username = '$username'");
  $result = mysqli_fetch_assoc($result);

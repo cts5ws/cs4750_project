@@ -13,7 +13,7 @@ if (mysqli_connect_errno()){
 $username = $_POST["username"];
 $password = $_POST["password"];
 
-$result = mysqli_query($con, "select * from `Fan` where Username = '$username' and Password = '$password'");
+$result = mysqli_query($con, "select * from `Fan` where Username = '$username' and Password = MD5('$password')");
 $rowcount=mysqli_num_rows($result);
 
 if($rowcount == 0){
