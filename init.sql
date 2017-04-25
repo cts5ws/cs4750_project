@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 13, 2017 at 11:29 PM
+-- Generation Time: Apr 24, 2017 at 10:13 PM
 -- Server version: 5.5.54-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.21
 
@@ -30,14 +30,15 @@ CREATE TABLE IF NOT EXISTS `Coach` (
   `Coach_ID` int(10) NOT NULL,
   `Name` varchar(64) DEFAULT NULL,
   `Title` varchar(64) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `Coach`
 --
 
 INSERT INTO `Coach` (`Coach_ID`, `Name`, `Title`) VALUES
-(1, 'Tony Bennet', 'Head Coach');
+(1, 'Tony Bennet', 'Head Coach'),
+(2, 'Mike Krzyzewski', 'Head Coach');
 
 -- --------------------------------------------------------
 
@@ -55,7 +56,8 @@ CREATE TABLE IF NOT EXISTS `Coaches` (
 --
 
 INSERT INTO `Coaches` (`Coach_ID`, `Team_ID`) VALUES
-(1, 1);
+(1, 1),
+(2, 2);
 
 -- --------------------------------------------------------
 
@@ -112,19 +114,19 @@ INSERT INTO `Fan` (`Fan_ID`, `Username`, `Password`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Favorites`
+-- Table structure for table `Favorties`
 --
 
-CREATE TABLE IF NOT EXISTS `Favorites` (
+CREATE TABLE IF NOT EXISTS `Favorties` (
   `Fan_ID` int(10) DEFAULT NULL,
   `Team_ID` int(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `Favorites`
+-- Dumping data for table `Favorties`
 --
 
-INSERT INTO `Favorites` (`Fan_ID`, `Team_ID`) VALUES
+INSERT INTO `Favorties` (`Fan_ID`, `Team_ID`) VALUES
 (15, 1),
 (16, 1),
 (17, 1),
@@ -157,14 +159,23 @@ INSERT INTO `League` (`League_ID`, `League_Admin`, `League_Name`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `Match` (
-  `Match_ID` int(10) NOT NULL DEFAULT '0',
+  `Match_ID` int(10) NOT NULL,
   `Team1_ID` int(10) DEFAULT NULL,
   `Team2_ID` int(10) DEFAULT NULL,
   `Date` date DEFAULT NULL,
   `Location` varchar(64) DEFAULT NULL,
   `Team1_Score` int(10) DEFAULT NULL,
   `Team2_Score` int(10) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `Match`
+--
+
+INSERT INTO `Match` (`Match_ID`, `Team1_ID`, `Team2_ID`, `Date`, `Location`, `Team1_Score`, `Team2_Score`) VALUES
+(1, 1, 2, '2017-04-20', 'Charlottesville, VA', 56, 49),
+(2, 2, 3, '2017-03-04', 'Chapel Hill, NC', 83, 90),
+(3, 1, 3, '2017-02-27', 'Charlottesville, VA', 53, 43);
 
 -- --------------------------------------------------------
 
@@ -179,14 +190,26 @@ CREATE TABLE IF NOT EXISTS `Player` (
   `Position` varchar(10) NOT NULL,
   `Year` int(2) NOT NULL,
   `Rating` int(3) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `Player`
 --
 
 INSERT INTO `Player` (`Player_ID`, `Name`, `Number`, `Position`, `Year`, `Rating`) VALUES
-(1, 'London Perrantes', 32, 'G', 4, 92);
+(1, 'London Perrantes', 32, 'G', 4, 92),
+(2, 'Kyle Guy', 5, 'G', 2, 87),
+(3, 'Isaiah Wilkins', 21, 'F', 4, 85),
+(4, 'Devon Hall', 0, 'G', 4, 88),
+(5, 'Jayson Tatum', 0, 'F', 1, 92),
+(6, 'Harry Giles', 1, 'F', 1, 79),
+(7, 'Chase Jeter', 2, 'F/C', 2, 71),
+(8, 'Matt Jones', 13, 'G', 4, 68),
+(9, 'Javin DeLaurier', 12, 'F', 1, 73),
+(10, 'Nate Britt', 0, 'G', 4, 82),
+(11, 'Isaiah Hicks', 4, 'F', 4, 94),
+(12, 'Stilman White', 30, 'G', 4, 86),
+(13, 'Brandon Robinson', 14, 'G', 1, 77);
 
 -- --------------------------------------------------------
 
@@ -204,7 +227,19 @@ CREATE TABLE IF NOT EXISTS `PlaysFor` (
 --
 
 INSERT INTO `PlaysFor` (`Player_ID`, `Team_ID`) VALUES
-(1, 1);
+(1, 1),
+(2, 1),
+(3, 1),
+(4, 1),
+(6, 2),
+(7, 2),
+(8, 2),
+(9, 2),
+(5, 2),
+(10, 3),
+(11, 3),
+(12, 3),
+(13, 3);
 
 -- --------------------------------------------------------
 
@@ -224,6 +259,15 @@ CREATE TABLE IF NOT EXISTS `Plays_In` (
   `Turnovers` int(5) DEFAULT NULL,
   `PTS` int(5) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `Plays_In`
+--
+
+INSERT INTO `Plays_In` (`Player_ID`, `Match_ID`, `FGP`, `3PP`, `Rebounds`, `Assists`, `Steals`, `Blocks`, `Turnovers`, `PTS`) VALUES
+(1, 3, 1, 0, 4, 6, 33, 2, 1, 17),
+(5, 2, 1, 0, 2, 3, 1, 0, 3, 18),
+(10, 3, 55, 45, 3, 2, 0, 5, 2, 11);
 
 -- --------------------------------------------------------
 
@@ -254,14 +298,16 @@ CREATE TABLE IF NOT EXISTS `Team` (
   `Mascot` varchar(20) DEFAULT NULL,
   `Team_ID` int(10) NOT NULL,
   `Rival` int(10) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1 COMMENT='Team attributes for each ACC BBall Team';
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1 COMMENT='Team attributes for each ACC BBall Team';
 
 --
 -- Dumping data for table `Team`
 --
 
 INSERT INTO `Team` (`Name`, `Mascot`, `Team_ID`, `Rival`) VALUES
-('University of Virginia', 'Cavaliers', 1, NULL);
+('University of Virginia', 'Cavaliers', 1, 2),
+('Duke University', 'Blue Devils', 2, 1),
+('University of North Carolina', 'Tarheels', 3, 2);
 
 -- --------------------------------------------------------
 
@@ -316,9 +362,9 @@ ALTER TABLE `Fan`
   ADD PRIMARY KEY (`Fan_ID`), ADD KEY `Fan_ID` (`Fan_ID`), ADD KEY `Fan_ID_2` (`Fan_ID`);
 
 --
--- Indexes for table `Favorites`
+-- Indexes for table `Favorties`
 --
-ALTER TABLE `Favorites`
+ALTER TABLE `Favorties`
   ADD KEY `Fan_ID` (`Fan_ID`), ADD KEY `Team_ID` (`Team_ID`);
 
 --
@@ -331,7 +377,7 @@ ALTER TABLE `League`
 -- Indexes for table `Match`
 --
 ALTER TABLE `Match`
-  ADD PRIMARY KEY (`Match_ID`);
+  ADD PRIMARY KEY (`Match_ID`), ADD KEY `Team1_ID` (`Team1_ID`), ADD KEY `Team2_ID` (`Team2_ID`);
 
 --
 -- Indexes for table `Player`
@@ -344,6 +390,12 @@ ALTER TABLE `Player`
 --
 ALTER TABLE `PlaysFor`
   ADD KEY `Player_ID` (`Player_ID`), ADD KEY `Team_ID` (`Team_ID`);
+
+--
+-- Indexes for table `Plays_In`
+--
+ALTER TABLE `Plays_In`
+  ADD KEY `Player_ID` (`Player_ID`), ADD KEY `Match_ID` (`Match_ID`);
 
 --
 -- Indexes for table `SelectedFor`
@@ -371,7 +423,7 @@ ALTER TABLE `Watchlist`
 -- AUTO_INCREMENT for table `Coach`
 --
 ALTER TABLE `Coach`
-  MODIFY `Coach_ID` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+  MODIFY `Coach_ID` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `Fan`
 --
@@ -383,15 +435,20 @@ ALTER TABLE `Fan`
 ALTER TABLE `League`
   MODIFY `League_ID` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
+-- AUTO_INCREMENT for table `Match`
+--
+ALTER TABLE `Match`
+  MODIFY `Match_ID` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+--
 -- AUTO_INCREMENT for table `Player`
 --
 ALTER TABLE `Player`
-  MODIFY `Player_ID` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+  MODIFY `Player_ID` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT for table `Team`
 --
 ALTER TABLE `Team`
-  MODIFY `Team_ID` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+  MODIFY `Team_ID` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `Watchlist`
 --
@@ -423,11 +480,11 @@ ADD CONSTRAINT `EnteredIn_ibfk_2` FOREIGN KEY (`Watchlist_ID`) REFERENCES `Watch
 ADD CONSTRAINT `EnteredIn_ibfk_1` FOREIGN KEY (`League_ID`) REFERENCES `League` (`League_ID`);
 
 --
--- Constraints for table `Favorites`
+-- Constraints for table `Favorties`
 --
-ALTER TABLE `Favorites`
-ADD CONSTRAINT `Favorites_ibfk_2` FOREIGN KEY (`Team_ID`) REFERENCES `Team` (`Team_ID`),
-ADD CONSTRAINT `Favorites_ibfk_1` FOREIGN KEY (`Fan_ID`) REFERENCES `Fan` (`Fan_ID`);
+ALTER TABLE `Favorties`
+ADD CONSTRAINT `Favorties_ibfk_2` FOREIGN KEY (`Team_ID`) REFERENCES `Team` (`Team_ID`),
+ADD CONSTRAINT `Favorties_ibfk_1` FOREIGN KEY (`Fan_ID`) REFERENCES `Fan` (`Fan_ID`);
 
 --
 -- Constraints for table `League`
@@ -436,11 +493,25 @@ ALTER TABLE `League`
 ADD CONSTRAINT `League_ibfk_1` FOREIGN KEY (`League_Admin`) REFERENCES `Fan` (`Fan_ID`);
 
 --
+-- Constraints for table `Match`
+--
+ALTER TABLE `Match`
+ADD CONSTRAINT `Match_ibfk_1` FOREIGN KEY (`Team1_ID`) REFERENCES `Team` (`Team_ID`),
+ADD CONSTRAINT `Match_ibfk_2` FOREIGN KEY (`Team2_ID`) REFERENCES `Team` (`Team_ID`);
+
+--
 -- Constraints for table `PlaysFor`
 --
 ALTER TABLE `PlaysFor`
 ADD CONSTRAINT `PlaysFor_ibfk_2` FOREIGN KEY (`Team_ID`) REFERENCES `Team` (`Team_ID`),
 ADD CONSTRAINT `PlaysFor_ibfk_1` FOREIGN KEY (`Player_ID`) REFERENCES `Player` (`Player_ID`);
+
+--
+-- Constraints for table `Plays_In`
+--
+ALTER TABLE `Plays_In`
+ADD CONSTRAINT `Plays_In_ibfk_1` FOREIGN KEY (`Player_ID`) REFERENCES `Player` (`Player_ID`),
+ADD CONSTRAINT `Plays_In_ibfk_2` FOREIGN KEY (`Match_ID`) REFERENCES `Match` (`Match_ID`);
 
 --
 -- Constraints for table `SelectedFor`
