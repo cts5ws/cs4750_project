@@ -27,7 +27,7 @@ if($rowcount == 0){
  session_start();
  $_SESSION["login"] = "valid";
  $_SESSION["username"] = $username;
- header("Refresh:0; url=stats.html");
+ header("Refresh:0; url=stats.php");
 }
 
 ?>
