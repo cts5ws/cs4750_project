@@ -47,7 +47,7 @@ if(!isset($_SESSION["login"])){
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="stats.php">
+                <a class="navbar-brand" href="home.php">
                     <img src="http://placehold.it/150x50&text=ACC BBall" alt="">
                 </a>
             </div>
@@ -68,7 +68,14 @@ if(!isset($_SESSION["login"])){
                     <!-- Features Section -->
         <div class="row">
             <div class = "col-lg-12">
-                <font color= black><h2>Welcome</h2></font>
+                <span style="color: black; ">
+                    <h2>Welcome 
+                        <?php
+                            session_start();
+                            echo $_SESSION["username"];
+                        ?>
+                    </h2>
+                </span>
                 <br>
             </div>
                 <div class= "col-lg-4 text-center">

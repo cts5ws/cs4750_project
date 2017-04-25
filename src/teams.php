@@ -41,7 +41,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="stats.php">
+                <a class="navbar-brand" href="home.php">
                     <img src="http://placehold.it/150x50&text=ACC BBall" alt="">
                 </a>
             </div>
@@ -49,7 +49,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                 	<li>
-                        <a href="stats.php">Home</a>
+                        <a href="home.php">Home</a>
                     </li>
                     <li>
                         <a href="watchlist.php">Watchlist</a>
