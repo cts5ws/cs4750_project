@@ -37,6 +37,9 @@
                 url : "loadPlayers.php",
                 success :
                     function(data){
+
+                        console.log(data);
+
                         var players = JSON.parse(data);
 
                         var arrayLength = players.length;

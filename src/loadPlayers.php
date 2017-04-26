@@ -13,7 +13,7 @@ $username = $_SESSION["username"];
 $fan_id = $_SESSION["fan_id"];
 
 //get favorite teams of the user
-$result = mysqli_query($con, "select Player_ID, Name from Players");
+$result = mysqli_query($con, "select Player_ID, Name from Player");
 $players = array();
 while($player = mysqli_fetch_assoc($result)){
     array_push($players, $player);
