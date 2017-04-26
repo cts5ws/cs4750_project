@@ -211,7 +211,8 @@
         <div class="row">
             <div class="col-lg-12">
 
-                <h1><i class="fa fa-fw fa-users"></i> League Play Page</h1>
+                <h1><i class="fa fa-fw fa-users"></i> League Play</h1>
+                <h4>Who has the best Roster in the ACC?</h4>
 			
 			</div>
         </div>

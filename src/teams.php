@@ -161,7 +161,8 @@
         <div class="row">
             <div class="col-lg-12">
 
-                <h1><i class="fa fa-fw fa-dribbble"></i> Teams Page</h1>
+                <h1><i class="fa fa-fw fa-dribbble"></i> Team Viewer</h1>
+                <h4>Keep up with your favorite Ballers!</h4>
 			
 			</div>
         </div>

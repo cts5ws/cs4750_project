@@ -85,7 +85,7 @@ if(!isset($_SESSION["login"])){
                     </div>
                     <div class="panel-body">
                         <br>
-                        <p>Check out your team and browse others in the ACC!</p>
+                        <p>Keep up with your favorite ACC Basketball team and browse your rivals in the ACC!</p>
                         <br>
                         <a href="teams.php" class="btn btn-primary">Teams</a>
                     </div>
@@ -99,7 +99,7 @@ if(!isset($_SESSION["login"])){
                     </div>
                     <div class="panel-body">
                         <br>
-                        <p>Check out your team and browse others in the ACC!</p>
+                        <p>Build the ultimate Roster, and hand pick the best players from across the ACC!</p>
                         <br>
                         <a href="watchlist.php" class="btn btn-primary">Watchlist</a>
                     </div>
@@ -113,7 +113,7 @@ if(!isset($_SESSION["login"])){
                     </div>
                     <div class="panel-body">
                         <br>
-                        <p>Check out your team and browse others in the ACC!</p>
+                        <p>Go head-to-head with other ACC Fans to see who manages the best Roster! For fame and for GLORY!</p>
                         <br>
                         <a href="league_play.php" class="btn btn-primary">Enter League</a>
                     </div>

@@ -157,7 +157,7 @@
     	<div class="row">
     		<div class="col-lg-12">
     			 <h1><i class="fa fa-fw fa-list"></i>Watchlist Manager</h1>
-    			 <h4>Build your best roster, beat the best roster.</h4>
+    			 <h4>Build your best roster to beat the best roster.</h4>
     		</div>
     	</div>
     <div class="row">
@@ -167,7 +167,7 @@
 			<form action="#" method="post">
 		        <select id="watchlist">
 		        </select>
-		        <input type="submit" name="load" class="btn btn-info" value=">>">
+		        <input type="submit" name="load" class="btn btn-primary" value=">>">
 		    </form>
 
 		</div>
