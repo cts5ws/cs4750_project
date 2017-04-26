@@ -164,8 +164,8 @@
     	<div class='col-lg-12 text-center'>	
 
 			<h3>My Watchlists:</h3>
-			<form action="#" method="post">
-		        <select id="watchlist">
+			<form action="exportWatchlist.php" method="post">
+		        <select id="watchlist" name="outlist">
 		        </select>
 		        <input type="submit" name="load" class="btn btn-primary" value=">>">
 		    </form>
