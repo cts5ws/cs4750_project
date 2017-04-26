@@ -80,14 +80,14 @@ if(isset($_SESSION["login"])){
                     Password: <input type="password" name="password"/><br> -->
                     <br>
                     <div class="col-lg-12 text-center"> 
-                        <input type="submit" class="btn btn-info" value="Submit Button">
+                        <input type="submit" class="btn btn-primary" value="Submit">
                     </div>
                 </div>
             </form>
 
                 <div class="col-lg-12 text-center"> 
                     <br>
-                    <a href="newAccount.php" class="btn btn-info" role="button">Create New Account!</a>
+                    <a href="newAccount.php" class="btn btn-warning" role="button">Create New Account!</a>
                 </div>
             </div>
         </div>
