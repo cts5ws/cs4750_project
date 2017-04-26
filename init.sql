@@ -93,7 +93,7 @@ DELIMITER ;
 -- Stand-in structure for view `defensive stats`
 -- (See below for the actual view)
 --
-CREATE TABLE `defensive stats` (
+CREATE TABLE `Defensive Stats` (
 `Player_ID` int(10)
 ,`Rebounds` int(5)
 ,`Steals` int(5)
@@ -141,7 +141,7 @@ INSERT INTO `Fan` (`Fan_ID`, `Username`, `Password`) VALUES
 -- Triggers `Fan`
 --
 DELIMITER $$
-CREATE TRIGGER `Update Fan ID in Favorites` BEFORE INSERT ON `Fan` FOR EACH ROW INSERT INTO favorites (Team_ID) VALUES (NEW.Fan_ID)
+CREATE TRIGGER `Update Fan ID in Favorites` BEFORE INSERT ON `Fan` FOR EACH ROW INSERT INTO Favorites (Team_ID) VALUES (NEW.Fan_ID)
 $$
 DELIMITER ;
 
@@ -151,7 +151,7 @@ DELIMITER ;
 -- Table structure for table `favorites`
 --
 
-CREATE TABLE `favorites` (
+CREATE TABLE `Favorites` (
   `Fan_ID` int(10) DEFAULT NULL,
   `Team_ID` int(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -160,7 +160,7 @@ CREATE TABLE `favorites` (
 -- Dumping data for table `favorites`
 --
 
-INSERT INTO `favorites` (`Fan_ID`, `Team_ID`) VALUES
+INSERT INTO `Favorites` (`Fan_ID`, `Team_ID`) VALUES
 (19, 3),
 (21, 1),
 (21, 2),
@@ -170,11 +170,11 @@ INSERT INTO `favorites` (`Fan_ID`, `Team_ID`) VALUES
 -- Triggers `favorites`
 --
 DELIMITER $$
-CREATE TRIGGER `Update Creates` BEFORE INSERT ON `favorites` FOR EACH ROW INSERT INTO Creates (Fan_ID) SELECT NEW.Fan_ID
+CREATE TRIGGER `Update Creates` BEFORE INSERT ON `Favorites` FOR EACH ROW INSERT INTO Creates (Fan_ID) SELECT NEW.Fan_ID
 $$
 DELIMITER ;
 DELIMITER $$
-CREATE TRIGGER `Update Watchlist` AFTER INSERT ON `favorites` FOR EACH ROW INSERT INTO Watchlist (Watchlist_Name) SELECT Team.Name FROM Team WHERE Team.Team_ID = NEW.Team_ID
+CREATE TRIGGER `Update Watchlist` AFTER INSERT ON `Favorites` FOR EACH ROW INSERT INTO Watchlist (Watchlist_Name) SELECT Team.Name FROM Team WHERE Team.Team_ID = NEW.Team_ID
 $$
 DELIMITER ;
 
@@ -228,7 +228,7 @@ INSERT INTO `Match` (`Match_ID`, `Team1_ID`, `Team2_ID`, `Date`, `Location`, `Te
 -- Stand-in structure for view `offensive stats`
 -- (See below for the actual view)
 --
-CREATE TABLE `offensive stats` (
+CREATE TABLE `Offensive Stats` (
 `Player_ID` int(10)
 ,`FGP` decimal(5,0)
 ,`3PP` decimal(5,0)
@@ -407,19 +407,19 @@ DELIMITER ;
 
 --
 -- Structure for view `defensive stats`
---
-DROP TABLE IF EXISTS `defensive stats`;
+-- --
+-- DROP TABLE IF EXISTS `Defensive Stats`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `defensive stats`  AS  select `plays_in`.`Player_ID` AS `Player_ID`,`plays_in`.`Rebounds` AS `Rebounds`,`plays_in`.`Steals` AS `Steals`,`plays_in`.`Blocks` AS `Blocks`,`plays_in`.`Turnovers` AS `Turnovers` from `plays_in` ;
+-- CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `Defensive Stats`  AS  select `Plays_In`.`Player_ID` AS `Player_ID`,`Plays_In`.`Rebounds` AS `Rebounds`,`Plays_In`.`Steals` AS `Steals`,`Plays_In`.`Blocks` AS `Blocks`,`Plays_In`.`Turnovers` AS `Turnovers` from `Plays_In` ;
 
 -- --------------------------------------------------------
 
 --
 -- Structure for view `offensive stats`
---
-DROP TABLE IF EXISTS `offensive stats`;
+-- --
+-- DROP TABLE IF EXISTS `Offensive Stats`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `offensive stats`  AS  select `plays_in`.`Player_ID` AS `Player_ID`,`plays_in`.`FGP` AS `FGP`,`plays_in`.`3PP` AS `3PP`,`plays_in`.`Assists` AS `Assists`,`plays_in`.`PTS` AS `PTS` from `plays_in` ;
+-- CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `Offensive Stats`  AS  select `Plays_In`.`Player_ID` AS `Player_ID`,`Plays_In`.`FGP` AS `FGP`,`Plays_In`.`3PP` AS `3PP`,`Plays_In`.`Assists` AS `Assists`,`Plays_In`.`PTS` AS `PTS` from `Plays_In` ;
 
 --
 -- Indexes for dumped tables
@@ -464,7 +464,7 @@ ALTER TABLE `Fan`
 --
 -- Indexes for table `favorites`
 --
-ALTER TABLE `favorites`
+ALTER TABLE `Favorites`
   ADD KEY `Fan_ID` (`Fan_ID`),
   ADD KEY `Team_ID` (`Team_ID`);
 
@@ -591,7 +591,7 @@ ALTER TABLE `EnteredIn`
 --
 -- Constraints for table `favorites`
 --
-ALTER TABLE `favorites`
+ALTER TABLE `Favorites`
   ADD CONSTRAINT `Favorties_ibfk_1` FOREIGN KEY (`Fan_ID`) REFERENCES `Fan` (`Fan_ID`),
   ADD CONSTRAINT `Favorties_ibfk_2` FOREIGN KEY (`Team_ID`) REFERENCES `Team` (`Team_ID`);
 
