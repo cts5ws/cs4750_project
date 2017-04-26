@@ -93,13 +93,14 @@
                     } 
                 } 
                 session_start();
+                $fan_id = $_SESSION["fan_id"];
 
                     include_once("./library.php"); // To connect to the database
 
 
                     $con = new PDO("mysql:host=$SERVER;dbname=$DATABASE", $USERNAME, $PASSWORD);
                     $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                    $stmt = $con->prepare("SELECT * FROM Watchlist NATURAL JOIN SelectedFor NATURAL JOIN Player NATURAL JOIN Creates where Fan_ID = 24"); 
+                    $stmt = $con->prepare("SELECT * FROM Watchlist NATURAL JOIN SelectedFor NATURAL JOIN Player NATURAL JOIN Creates where Fan_ID = $fan_id"); 
                     $stmt->execute();
 
                     $result = $stmt->setFetchMode(PDO::FETCH_ASSOC); 
