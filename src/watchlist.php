@@ -58,6 +58,7 @@
 
     <script>
     	$(document).ready();
+    	
     	function getWatchlist(){
 			$.ajax({
                 url : "loadLists.php",
@@ -80,6 +81,8 @@
     	}
     	getWatchlist();
     </script>
+
+
 
 
 </head>
@@ -139,7 +142,7 @@
 	<div class="row">
 		<div class="col-lg-12 text-center">
 			<br>
-			<a href='#' class="btn btn-primary">Add New Watchlist</a>
+			<a href='addWatchlist.php' class="btn btn-primary">Add New Watchlist</a>
 			<a href='#' class="btn btn-primary">Remove Watchlist</a>
 			<br>
 		</div>
@@ -219,21 +222,21 @@
                 </tbody>
             </table>
         </div>
-                </div>
-            </div>
+    </div>
+    </div> <!-- end row -->
             <div class='row'>
-            	<div class='col-lg-3'>
+            	<div class='col-lg-12 text-center'>
             	<br>
-            	<h4>Add Players</h4>
-            	</div>
-            	<div class='col-lg-4'>	
-					<h5>Player</h5>
+            	<h4>Add Player:</h4>
 					        <select id="player">
 					        </select>
+			    			<br>
+			    			<br>
+        		<a href='#' class="btn btn-primary">Add Player</a>
+        		<a href='#' class="btn btn-primary">Drop Player</a>
 				</div>
-					<br>
-            		<a href='#' class="btn btn-primary">Add Player</a>
-            		<a href='#' class="btn btn-primary">Drop Player</a>
+
+
 
             </div>
 
