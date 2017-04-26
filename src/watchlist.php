@@ -73,8 +73,68 @@
             <div class="col-lg-12">
 
                 <h1><i class="fa fa-fw fa-list"></i> Watchlist Page</h1>
+<<<<<<< HEAD
 			
 			</div>
+=======
+                test1
+
+
+                <?php
+                echo "<table style='border: solid 1px black;'>";
+                class TableRows extends RecursiveIteratorIterator { 
+                    function __construct($it) { 
+                        parent::__construct($it, self::LEAVES_ONLY); 
+                    }
+
+                    function current() {
+                        return "<td style='width:150px;border:1px solid black;'>" . parent::current(). "</td>";
+                    }
+
+                    function beginChildren() { 
+                        echo "<tr>"; 
+                    } 
+
+                    function endChildren() { 
+                        echo "</tr>" . "\n";
+                    } 
+                } 
+                session_start();
+                $fan_id = $_SESSION["fan_id"];
+
+                    include_once("./library.php"); // To connect to the database
+
+
+                    $con = new PDO("mysql:host=$SERVER;dbname=$DATABASE", $USERNAME, $PASSWORD);
+                    $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                    $stmt = $con->prepare("SELECT * FROM Watchlist NATURAL JOIN SelectedFor NATURAL JOIN Player NATURAL JOIN Creates where Fan_ID = $fan_id"); 
+                    $stmt->execute();
+
+                    $result = $stmt->setFetchMode(PDO::FETCH_ASSOC); 
+                    foreach(new TableRows(new RecursiveArrayIterator($stmt->fetchAll())) as $k=>$v) { 
+                        echo $v;
+                    }
+                    
+                    // adding stuff
+                    $field1 = 8;
+                    $field2 = "Eight";
+                    $add = $con->prepare("INSERT INTO Watchlist(Watchlist_ID, Watchlist_Name) VALUES(:field1,:field2)");
+                    $add->execute(array(':field1' => $field1, ':field2' => $field2));
+                    $affected_rows = $add->rowCount();
+
+                    //deleting stuff ** currently not working
+                    // $deleteme = 5;
+                    // $del = $con->prepare("DELETE FROM Watchlist WHERE Watchlist_ID=:deleteme");
+                    // $del->bindValue(':deleteme', $deleteme, PDO::PARAM_INT);
+                    // $del->execute();
+                    // $affected_rows_del = $del->rowCount();
+
+
+                    ?>
+                    test2
+                </div>
+            </div>
+>>>>>>> d0b420d9ca49d6fd7e753c1d63190c1381f5edad
         </div>
     </div>
 

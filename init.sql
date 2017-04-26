@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `cs4750s17chd5hq`
+-- Database: `cs4750s17<STUDENT ID HERE WITHOUT BRACKETS>`
 --
 
 -- --------------------------------------------------------
@@ -117,7 +117,7 @@ INSERT INTO `Fan` (`Fan_ID`, `Username`, `Password`) VALUES
 -- Table structure for table `Favorties`
 --
 
-CREATE TABLE IF NOT EXISTS `Favorties` (
+CREATE TABLE IF NOT EXISTS `Favorites` (
   `Fan_ID` int(10) DEFAULT NULL,
   `Team_ID` int(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
