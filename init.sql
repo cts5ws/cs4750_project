@@ -17,7 +17,21 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `database_project`
+-- Database: `ACC BASKETBALL PROJECT`
+--Chase Deets
+--chd5hq
+
+--Cole Schafer
+--cts5ws
+
+--Jacob Bailey
+--jtb3wj
+
+--Zach Auman
+--zpa4br
+
+--Jeffrey Gray
+--Jhg7nm
 --
 
 -- --------------------------------------------------------
