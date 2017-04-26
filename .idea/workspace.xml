@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c2108349-03ee-425c-b08f-75688082c17a" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/loadleagues.php" afterPath="$PROJECT_DIR$/src/loadLeagues.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/addFanToLeague.php" afterPath="$PROJECT_DIR$/src/addFanToLeague.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/handleAddTeam.php" afterPath="$PROJECT_DIR$/src/handleAddTeam.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/league_play.php" afterPath="$PROJECT_DIR$/src/league_play.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/loadAdminTeams.php" afterPath="$PROJECT_DIR$/src/loadAdminTeams.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/removeFanFromLeague.php" afterPath="$PROJECT_DIR$/src/removeFanFromLeague.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -23,8 +17,8 @@
       <file leaf-file-name="league_play.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/league_play.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-194">
-              <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+            <state relative-caret-position="566">
+              <caret line="40" column="28" lean-forward="false" selection-start-line="40" selection-start-column="28" selection-end-line="40" selection-end-column="28" />
               <folding>
                 <element signature="n#style#0;n#table#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#table#0;n#div#6;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -78,8 +72,8 @@
         <option value="$PROJECT_DIR$/src/loadLeagues.php" />
         <option value="$PROJECT_DIR$/src/removeFanFromLeague.php" />
         <option value="$PROJECT_DIR$/src/handleRemoveLeague.php" />
-        <option value="$PROJECT_DIR$/src/league_play.php" />
         <option value="$PROJECT_DIR$/src/loadLeagueData.php" />
+        <option value="$PROJECT_DIR$/src/league_play.php" />
       </list>
     </option>
   </component>
@@ -237,12 +231,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1493189350427</updated>
-      <workItem from="1493189353712" duration="22069000" />
+      <workItem from="1493189353712" duration="22489000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22069000" />
+    <option name="totallyTimeSpent" value="22489000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="24" width="1602" height="853" extended-state="6" />
@@ -283,7 +277,7 @@
         <state relative-caret-position="-2981">
           <caret line="27" column="16" lean-forward="true" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="16" />
           <folding>
-            <marker date="1493191865176" expanded="true" signature="6105:6245" ph="SELECT Name,... " />
+            <marker date="1493212098252" expanded="true" signature="6105:6245" ph="SELECT Name,... " />
           </folding>
         </state>
       </provider>
@@ -469,8 +463,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/league_play.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-194">
-          <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+        <state relative-caret-position="566">
+          <caret line="40" column="28" lean-forward="false" selection-start-line="40" selection-start-column="28" selection-end-line="40" selection-end-column="28" />
           <folding>
             <element signature="n#style#0;n#table#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#table#0;n#div#6;n#body#0;n#html#0;n#!!top" expanded="true" />

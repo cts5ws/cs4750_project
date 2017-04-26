@@ -33,6 +33,17 @@
     <script>
         $(document).ready();
 
+        function predicateBy(prop){
+            return function(a,b){
+                if( a[prop] > b[prop]){
+                    return -1;
+                }else if( a[prop] < b[prop] ){
+                    return 1;
+                }
+                return 0;
+            }
+        }
+
         function getMyLeagues(){
             return $.ajax({
                 url : "loadLeagues.php",
@@ -90,6 +101,8 @@
 
                         var table1 = info.table1;
                         var table2 = info.table2;
+
+                        table1.sort(predicateBy("avg"));
 
                         var arrayLength = table1.length;
                         for(var i = 0; i < arrayLength; i++){
