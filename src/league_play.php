@@ -27,13 +27,26 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <script src="http://code.jquery.com/jquery-1.11.3.js"></script>
+
+
     <script>
+        $(document).ready();
+
         function getMyLeagues(){
             return $.ajax({
-                url : "loadTeams.php",
+                url : "loadLeagues.php",
                 success :
                     function(data){
-
+                        console.log(data);
+                        var leagues = JSON.parse(data);
+                        var arrayLength = leagues.length;
+                        for(var i = 0; i < arrayLength; i++){
+                            $('#league').append($('<option>', {
+                                value : leagues[i]["League_ID"],
+                                text : leagues[i]["League_Name"]
+                            }));
+                        }
                     }
             });
         }
@@ -44,53 +57,113 @@
                 success :
                     function(data){
 
+                        var leagues = JSON.parse(data);
+
+                        var arrayLength = leagues.length;
+                        for(var i = 0; i < arrayLength; i++){
+                            $('#my_leagues').append($('<option>', {
+                                value : leagues[i]["League_ID"],
+                                text : leagues[i]["League_Name"]
+                            }));
+                        }
                     }
             });
         }
 
         function getData(){
+            var leagueID = document.getElementById("league").value;
+            var myLeagueID = document.getElementById("my_leagues").value;
 
             $("tr[id=row]").remove();
 
             $.ajax({
-                url : "loadTeamData.php",
-                method : "POST"
+                url : "loadLeagueData.php",
+                method : "POST",
+                data:{leagueID : leagueID,
+                        myLeagueID : myLeagueID},
                 success:
                     function(data){
 
+                        console.log(data);
+
+                       var info = JSON.parse(data);
+
+                        var table1 = info.table1;
+                        var table2 = info.table2;
+
+                        var arrayLength = table1.length;
+                        for(var i = 0; i < arrayLength; i++){
+                            var row = '<tr id="row"><td>'
+                                .concat(table1[i]['Username']).concat('</td><td>')
+                                .concat(table1[i]['Watchlist_Name']).concat('</td><td>')
+                                .concat(table1[i]['avg']).concat('</td></tr>');
+
+                            $('#leagues').append(row);
+                        }
+
+                        var arrayLength = table2.length;
+                        for(var i = 0; i < arrayLength; i++){
+                            var row = '<tr id="row"><td>'
+                                .concat(table2[i]['Username']).concat('</td></tr>');
+
+                            $('#my_league_table').append(row);
+                        }
                     }
             });
         }
 
-        function addTeam(){
+        function addFan(){
 
             var username = document.getElementById('username').value;
+            var leagueID = document.getElementById('my_leagues').value;
+
 
             return $.ajax({
                 url : "addFanToLeague.php",
                 method : "POST",
-                data:{username : username},
+                data:{username : username,
+                    leagueID : leagueID},
                 success :
                     function(data){
+                        var info = JSON.parse(data);
 
+                        if(info.invalid != null){
+                            alert(info.invalid);
+                        }else {
+                            alert(info.valid);
+                        }
                     }
             });
         }
 
-        function removeTeam(){
+        function removeFan(){
 
             var username = document.getElementById('username').value;
+            var leagueID = document.getElementById('my_leagues').value;
 
             return $.ajax({
                 url : "removeFanFromLeague.php",
                 method : "POST",
-                data:{teamID : teamID},
+                data:{username : username,
+                    leagueID : leagueID},
                 success :
                     function(data){
+
+                        console.log(data);
+
+                        var info = JSON.parse(data);
+                        alert(info.valid);
 
                     }
             });
         }
+
+        getAdminLeagues();
+
+        var deferred = getMyLeagues();
+        $.when(deferred).done(function() {
+            getData();
+        });
 
     </script>
 </head>
@@ -173,8 +246,18 @@
         </select>
     </div>
 
+    <br>
+
+    <div class="row top100" style="text-align: center;">
+        <a href="createLeague.php"><button type="button" class="btn btn-primary" >Create League</button></a>
+    </div>
+
+    <div class="row top100" style="text-align: center;">
+        <a href="removeLeague.php"><button type="button" class="btn btn-primary" >Remove League</button></a>
+    </div>
+
     <div id="tables">
-        <table id="my_league_table" class="table table-hover" style="width: 70%" align="center">
+        <table id="my_league_table" class="table table-hover" style="width: 40%" align="center">
             <thead>
             <tr>
                 <th>Username</th>
@@ -192,15 +275,20 @@
         <br>
 
         <div class="row top100" style="text-align: center;">
-            <button onclick="addTeam();" type="button" class="btn btn-primary" >Add User</button>
+            <button onclick="addFan();" type="button" class="btn btn-primary" >Add User</button>
         </div>
 
-        <br>
 
         <div class="row top100" style="text-align: center;">
-            <button onclick="removeTeam();" type="button" class="btn btn-primary" >Remove User</button>
+            <button onclick="removeFan();" type="button" class="btn btn-primary" >Remove User</button>
         </div>
 
+    </div>
+
+    <br>
+    <br>
+    <div align="center">
+        <button class="btn btn-primary" onclick="getData();">Load Team Data</button>
     </div>
 
 </body>

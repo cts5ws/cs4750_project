@@ -2,10 +2,8 @@
 
 /*
  * FILENAME: loadleagues.php
- * 
+ *
  * This file loads the leagues for the given user
- *
- *
 */
 
 
@@ -28,8 +26,9 @@ if (mysqli_connect_errno()){
 $username = $_SESSION["username"];
 $fan_id = $_SESSION["fan_id"];
 
+
 /*get leagues of the user*/
-$result = mysqli_query($con, "SELECT DISTINCT League_ID, League, Fan_ID FROM ((League NATURAL JOIN EnteredIn) NATURAL JOIN Fan WHERE Fan_ID = $fan_id");
+$result = mysqli_query($con, "SELECT DISTINCT League_ID, League_Name FROM ((((Creates NATURAL JOIN Fan) NATURAL JOIN Watchlist) NATURAL JOIN EnteredIn) NATURAL JOIN League) WHERE Fan_ID = $fan_id");
 
 $leagues = array(); /*allocate array for leagues*/
 

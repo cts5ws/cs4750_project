@@ -10,10 +10,10 @@ if (mysqli_connect_errno()){
 }
 
 $fan_id = $_SESSION["fan_id"];
+$league_name = $_POST["name"];
 
-$team_id = $_POST["team"];
+mysqli_query($con, "insert into `League` (League_Admin, League_Name) values ('$fan_id','$league_name')");
 
-mysqli_query($con, "insert into `Favorites` (Fan_ID, Team_ID) values ('$fan_id','$team_id')");
+header("Refresh:0; url=league_play.php");
 
-header("Refresh:0; url=teams.php");
 ?>
