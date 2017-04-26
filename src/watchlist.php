@@ -107,6 +107,21 @@
                         echo $v;
                     }
                     
+                    // adding stuff
+                    $field1 = 8;
+                    $field2 = "Eight";
+                    $add = $con->prepare("INSERT INTO Watchlist(Watchlist_ID, Watchlist_Name) VALUES(:field1,:field2)");
+                    $add->execute(array(':field1' => $field1, ':field2' => $field2));
+                    $affected_rows = $add->rowCount();
+
+                    //deleting stuff ** currently not working
+                    // $deleteme = 5;
+                    // $del = $con->prepare("DELETE FROM Watchlist WHERE Watchlist_ID=:deleteme");
+                    // $del->bindValue(':deleteme', $deleteme, PDO::PARAM_INT);
+                    // $del->execute();
+                    // $affected_rows_del = $del->rowCount();
+
+
                     ?>
                     test2
                 </div>
