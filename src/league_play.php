@@ -27,6 +27,72 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <script>
+        function getMyLeagues(){
+            return $.ajax({
+                url : "loadTeams.php",
+                success :
+                    function(data){
+
+                    }
+            });
+        }
+
+        function getAdminLeagues(){
+            return $.ajax({
+                url : "loadAdminTeams.php",
+                success :
+                    function(data){
+
+                    }
+            });
+        }
+
+        function getData(){
+
+            $("tr[id=row]").remove();
+
+            $.ajax({
+                url : "loadTeamData.php",
+                method : "POST"
+                success:
+                    function(data){
+
+                    }
+            });
+        }
+
+        function addTeam(){
+
+            var username = document.getElementById('username').value;
+
+            return $.ajax({
+                url : "addFanToLeague.php",
+                method : "POST",
+                data:{username : username},
+                success :
+                    function(data){
+
+                    }
+            });
+        }
+
+        function removeTeam(){
+
+            var username = document.getElementById('username').value;
+
+            return $.ajax({
+                url : "removeFanFromLeague.php",
+                method : "POST",
+                data:{teamID : teamID},
+                success :
+                    function(data){
+
+                    }
+            });
+        }
+
+    </script>
 </head>
 
 <body>
@@ -76,6 +142,65 @@
 			
 			</div>
         </div>
+    </div>
+
+
+    <h3 align="center">My Leagues</h3>
+    <div align="center" id="league_select">
+        <select id="league">
+        </select>
+    </div>
+
+    <div id="tables">
+        <table id="leagues" class="table table-hover" style="width: 70%" align="center">
+            <thead>
+            <tr>
+                <th>Username</th>
+                <th>Watchlist Name</th>
+                <th>Average</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+    <br><br>
+
+    <h3 align="center">League Management</h3>
+    <div align="center" id="league_management_select">
+        <select id="my_leagues">
+        </select>
+    </div>
+
+    <div id="tables">
+        <table id="my_league_table" class="table table-hover" style="width: 70%" align="center">
+            <thead>
+            <tr>
+                <th>Username</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+    <div align="center">
+        <input id="username" name="username" type="text">
+
+        <br>
+        <br>
+
+        <div class="row top100" style="text-align: center;">
+            <button onclick="addTeam();" type="button" class="btn btn-primary" >Add User</button>
+        </div>
+
+        <br>
+
+        <div class="row top100" style="text-align: center;">
+            <button onclick="removeTeam();" type="button" class="btn btn-primary" >Remove User</button>
+        </div>
+
     </div>
 
 </body>
