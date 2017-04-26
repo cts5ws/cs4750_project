@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c2108349-03ee-425c-b08f-75688082c17a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/league_play.php" afterPath="$PROJECT_DIR$/src/league_play.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/loadLeagueData.php" afterPath="$PROJECT_DIR$/src/loadLeagueData.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,26 +18,28 @@
       <file leaf-file-name="league_play.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/league_play.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="566">
-              <caret line="40" column="28" lean-forward="false" selection-start-line="40" selection-start-column="28" selection-end-line="40" selection-end-column="28" />
+            <state relative-caret-position="221">
+              <caret line="51" column="26" lean-forward="false" selection-start-line="51" selection-start-column="24" selection-end-line="51" selection-end-column="26" />
               <folding>
                 <element signature="n#style#0;n#table#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#table#0;n#div#6;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#table#0;n#div#8;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <marker date="1493243153369" expanded="false" signature="9833:9852" ph="..." />
+                <marker date="1493243153369" expanded="false" signature="10011:10030" ph="..." />
+                <marker date="1493243153369" expanded="false" signature="10603:10622" ph="..." />
+                <marker date="1493243153369" expanded="false" signature="10778:10797" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="loadLeagueData.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/loadLeagueData.php">
+      <file leaf-file-name="handleAddDrop.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/handleAddDrop.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="580">
-              <caret line="38" column="144" lean-forward="false" selection-start-line="38" selection-start-column="144" selection-end-line="38" selection-end-column="144" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
-                <marker date="1493211561035" expanded="true" signature="433:600" ph="SELECT DISTI... Fan" />
-                <marker date="1493211561035" expanded="true" signature="770:864" ph="select Ratin... Watchlist" />
-                <marker date="1493211561035" expanded="true" signature="770:865" ph="select Ratin... Watchlist" />
-                <marker date="1493211561035" expanded="true" signature="1170:1310" ph="SELECT DISTI... Fan" />
+                <marker date="1493212098252" expanded="true" signature="481:576" ph="insert into SelectedFor... " />
+                <marker date="1493212098252" expanded="true" signature="737:815" ph="Delete from " />
               </folding>
             </state>
           </provider>
@@ -49,6 +52,7 @@
       <find>select</find>
       <find>loadLeagues</find>
       <find>console.log</find>
+      <find>id=&quot;watchlist&quot;</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -73,6 +77,7 @@
         <option value="$PROJECT_DIR$/src/removeFanFromLeague.php" />
         <option value="$PROJECT_DIR$/src/handleRemoveLeague.php" />
         <option value="$PROJECT_DIR$/src/loadLeagueData.php" />
+        <option value="$PROJECT_DIR$/src/updateWatchlist.php" />
         <option value="$PROJECT_DIR$/src/league_play.php" />
       </list>
     </option>
@@ -231,12 +236,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1493189350427</updated>
-      <workItem from="1493189353712" duration="22489000" />
+      <workItem from="1493189353712" duration="34321000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22489000" />
+    <option name="totallyTimeSpent" value="34321000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="24" width="1602" height="853" extended-state="6" />
@@ -260,6 +265,25 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328877" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="processedProjectFiles" value="true" />
@@ -277,7 +301,7 @@
         <state relative-caret-position="-2981">
           <caret line="27" column="16" lean-forward="true" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="16" />
           <folding>
-            <marker date="1493212098252" expanded="true" signature="6105:6245" ph="SELECT Name,... " />
+            <marker date="1493212899993" expanded="true" signature="6105:6245" ph="SELECT Name,... " />
           </folding>
         </state>
       </provider>
@@ -450,24 +474,53 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/loadLeagueData.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="580">
-          <caret line="38" column="144" lean-forward="false" selection-start-line="38" selection-start-column="144" selection-end-line="38" selection-end-column="144" />
+        <state relative-caret-position="488">
+          <caret line="51" column="34" lean-forward="false" selection-start-line="51" selection-start-column="34" selection-end-line="51" selection-end-column="34" />
           <folding>
-            <marker date="1493211561035" expanded="true" signature="433:600" ph="SELECT DISTI... Fan" />
-            <marker date="1493211561035" expanded="true" signature="770:864" ph="select Ratin... Watchlist" />
-            <marker date="1493211561035" expanded="true" signature="770:865" ph="select Ratin... Watchlist" />
-            <marker date="1493211561035" expanded="true" signature="1170:1310" ph="SELECT DISTI... Fan" />
+            <marker date="1493217860556" expanded="true" signature="433:600" ph="SELECT DISTI... Fan" />
+            <marker date="1493217860556" expanded="true" signature="770:864" ph="select Ratin... Watchlist" />
+            <marker date="1493217860556" expanded="true" signature="770:865" ph="select Ratin... Watchlist" />
+            <marker date="1493217860556" expanded="true" signature="1170:1310" ph="SELECT DISTI... Fan" />
+            <marker date="1493217860556" expanded="true" signature="1472:1823" ph="SELECT DISTI... Fan" />
+            <marker date="1493217860556" expanded="true" signature="1644:1822" ph="SELECT DISTI... Fan" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/updateWatchlist.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="19" column="31" lean-forward="false" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
+          <folding>
+            <marker date="1493243153365" expanded="true" signature="395:575" ph="DELETE FROM " />
+            <marker date="1493243153365" expanded="true" signature="471:574" ph="SELECT Watch... Fan" />
+            <marker date="1493243153365" expanded="true" signature="599:686" ph="insert into EnteredIn... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/handleAddDrop.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1493212098252" expanded="true" signature="481:576" ph="insert into SelectedFor... " />
+            <marker date="1493212098252" expanded="true" signature="737:815" ph="Delete from " />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/league_play.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="566">
-          <caret line="40" column="28" lean-forward="false" selection-start-line="40" selection-start-column="28" selection-end-line="40" selection-end-column="28" />
+        <state relative-caret-position="221">
+          <caret line="51" column="26" lean-forward="false" selection-start-line="51" selection-start-column="24" selection-end-line="51" selection-end-column="26" />
           <folding>
             <element signature="n#style#0;n#table#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#table#0;n#div#6;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#table#0;n#div#8;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1493243153369" expanded="false" signature="9833:9852" ph="..." />
+            <marker date="1493243153369" expanded="false" signature="10011:10030" ph="..." />
+            <marker date="1493243153369" expanded="false" signature="10603:10622" ph="..." />
+            <marker date="1493243153369" expanded="false" signature="10778:10797" ph="..." />
           </folding>
         </state>
       </provider>

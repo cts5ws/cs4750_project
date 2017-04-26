@@ -43,6 +43,15 @@ while($table = mysqli_fetch_assoc($result)){
 }
 $data["table2"] = $table2;
 
+
+$result = mysqli_query($con, "SELECT DISTINCT Watchlist_Name, Watchlist_ID FROM (((Fan NATURAL JOIN Creates) NATURAL JOIN Watchlist)) WHERE (Fan_ID = $fan_id) and (Watchlist_Name, Watchlist_ID) not in (SELECT DISTINCT Watchlist_Name, Watchlist_ID FROM (((Fan NATURAL JOIN Creates) NATURAL JOIN Watchlist) NATURAL JOIN EnteredIn) WHERE (League_ID = $league_id and Fan_ID = $fan_id))");
+$watchlists = array();
+while($watchlist = mysqli_fetch_assoc($result)){
+    array_push($watchlists, $watchlist);
+}
+$data["watchlists"] = $watchlists;
+
+
 $JSONStringResults = json_encode($data);
 echo $JSONStringResults;
 

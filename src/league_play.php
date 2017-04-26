@@ -101,6 +101,7 @@
 
                         var table1 = info.table1;
                         var table2 = info.table2;
+                        var watchlists = info.watchlists;
 
                         table1.sort(predicateBy("avg"));
 
@@ -120,6 +121,14 @@
                                 .concat(table2[i]['Username']).concat('</td></tr>');
 
                             $('#my_league_table').append(row);
+                        }
+
+                        var arrayLength = watchlists.length;
+                        for(var i = 0; i < arrayLength; i++){
+                            $('#watchlist').append($('<option>', {
+                                value : watchlists[i]["Watchlist_ID"],
+                                text : watchlists[i]["Watchlist_Name"]
+                            }));
                         }
                     }
             });
@@ -153,6 +162,7 @@
 
             var username = document.getElementById('username').value;
             var leagueID = document.getElementById('my_leagues').value;
+            var watchlist = document.getElementById('watchlists').value;
 
             return $.ajax({
                 url : "removeFanFromLeague.php",
@@ -167,6 +177,25 @@
                         var info = JSON.parse(data);
                         alert(info.valid);
 
+                    }
+            });
+        }
+
+        function updateWatchlist(){
+            var leagueID = document.getElementById("league").value;
+            var watchlist_id = document.getElementById("watchlist").value;
+
+            console.log(leagueID);
+            console.log(watchlist_id);
+
+            return $.ajax({
+                url : "updateWatchlist.php",
+                method : "POST",
+                data:{leagueID : leagueID,
+                    watchlist_id : watchlist_id},
+                success :
+                    function(data){
+                        alert(data);
                     }
             });
         }
@@ -250,6 +279,15 @@
             <tbody>
             </tbody>
         </table>
+    </div>
+
+    <div align="center" id="watchlist_select">
+        <select id="watchlist">
+        </select>
+    </div>
+
+    <div class="row top100" style="text-align: center;">
+        <button onclick="updateWatchlist();" type="button" class="btn btn-primary" >Change Your Watchlist for This League</button>
     </div>
 
     <br><br>
