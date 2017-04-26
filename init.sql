@@ -500,13 +500,6 @@ ALTER TABLE `Plays_In`
   ADD KEY `Match_ID` (`Match_ID`);
 
 --
--- Indexes for table `SelectedFor`
---
-ALTER TABLE `SelectedFor`
-  ADD KEY `Watchlist_ID` (`Watchlist_ID`),
-  ADD KEY `Player_ID` (`Player_ID`);
-
---
 -- Indexes for table `Team`
 --
 ALTER TABLE `Team`
