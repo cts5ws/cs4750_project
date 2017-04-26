@@ -407,19 +407,19 @@ DELIMITER ;
 
 --
 -- Structure for view `defensive stats`
---
-DROP TABLE IF EXISTS `Defensive Stats`;
+-- --
+-- DROP TABLE IF EXISTS `Defensive Stats`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `Defensive Stats`  AS  select `Plays_In`.`Player_ID` AS `Player_ID`,`Plays_In`.`Rebounds` AS `Rebounds`,`Plays_In`.`Steals` AS `Steals`,`Plays_In`.`Blocks` AS `Blocks`,`Plays_In`.`Turnovers` AS `Turnovers` from `Plays_In` ;
+-- CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `Defensive Stats`  AS  select `Plays_In`.`Player_ID` AS `Player_ID`,`Plays_In`.`Rebounds` AS `Rebounds`,`Plays_In`.`Steals` AS `Steals`,`Plays_In`.`Blocks` AS `Blocks`,`Plays_In`.`Turnovers` AS `Turnovers` from `Plays_In` ;
 
 -- --------------------------------------------------------
 
 --
 -- Structure for view `offensive stats`
---
-DROP TABLE IF EXISTS `Offensive Stats`;
+-- --
+-- DROP TABLE IF EXISTS `Offensive Stats`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `Offensive Stats`  AS  select `Plays_In`.`Player_ID` AS `Player_ID`,`Plays_In`.`FGP` AS `FGP`,`Plays_In`.`3PP` AS `3PP`,`Plays_In`.`Assists` AS `Assists`,`Plays_In`.`PTS` AS `PTS` from `Plays_In` ;
+-- CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `Offensive Stats`  AS  select `Plays_In`.`Player_ID` AS `Player_ID`,`Plays_In`.`FGP` AS `FGP`,`Plays_In`.`3PP` AS `3PP`,`Plays_In`.`Assists` AS `Assists`,`Plays_In`.`PTS` AS `PTS` from `Plays_In` ;
 
 --
 -- Indexes for dumped tables
