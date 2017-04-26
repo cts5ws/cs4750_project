@@ -120,7 +120,7 @@ CREATE TABLE `EnteredIn` (
 
 CREATE TABLE `Fan` (
   `Fan_ID` int(10) NOT NULL,
-  `Username` varchar(20) NOT NULL,
+  `Username` varchar(32) NOT NULL,
   `Password` varchar(32) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
