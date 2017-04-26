@@ -129,12 +129,11 @@ CREATE TABLE `Fan` (
 --
 
 INSERT INTO `Fan` (`Fan_ID`, `Username`, `Password`) VALUES
-(15, 'Chase', 'Password'),
-(16, 'Cole', 'Password'),
-(17, 'Jacob', 'Password'),
-(18, 'Zach', 'Password'),
-(19, 'Jeff', 'Password'),
-(20, '', ''),
+(15, 'Chase', 'dc647eb65e6711e155375218212b3964'),
+(16, 'Cole', 'dc647eb65e6711e155375218212b3964'),
+(17, 'Jacob', 'dc647eb65e6711e155375218212b3964'),
+(18, 'Zach', 'dc647eb65e6711e155375218212b3964'),
+(19, 'Jeff', 'dc647eb65e6711e155375218212b3964'),
 (21, 'zachh', '6f749bf4e5bb6903f28c6f030daa5a1a');
 
 --
@@ -385,12 +384,7 @@ CREATE TABLE `Watchlist` (
 --
 
 INSERT INTO `Watchlist` (`Watchlist_ID`, `Watchlist_Name`) VALUES
-(19, 'New Watchlist'),
-(20, 'New Watchlist'),
-(21, 'New Watchlist'),
-(22, 'New Watchlist'),
 (23, 'University of Virginia'),
-(24, 'New Watchlist'),
 (25, 'Duke University'),
 (26, 'New Watchlist'),
 (27, 'University of North Carolina');
