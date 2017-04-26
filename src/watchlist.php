@@ -27,6 +27,32 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <script src="http://code.jquery.com/jquery-1.11.3.js"></script>
+
+    <script>
+        $(document).ready();
+
+        function getPlayers(){
+            $.ajax({
+                url : "loadPlayers.php",
+                success :
+                    function(data){
+                        var players = JSON.parse(data);
+
+                        var arrayLength = players.length;
+                        for(var i = 0; i < arrayLength; i++){
+                            $('#player').append($('<option>', {
+                                value : players[i]["Player_ID"],
+                                text : players[i]["Name"]
+                            }));
+                        }
+                    }
+            });
+        }
+
+        getPlayers();
+    </script>
+
 </head>
 
 <body>
@@ -74,18 +100,30 @@
 
                 <h1><i class="fa fa-fw fa-list"></i> Watchlist Page</h1>
 
-                test1
+                <div class="table-responsive">          
+				  <table class="table table-hover">
+				  	<thead>
+				  		<tr>
+					        <th>Player</th>
+					        <th>Number</th>
+					        <th>Position</th>
+					        <th>Year</th>
+					        <th>Rating</th>
+					    </tr>
+				  	</thead>
+				  	<tbody>
+				  		<tr>
 
 
                 <?php
-                echo "<table style='border: solid 1px black;'>";
+                //echo "<table style='border: solid 1px black;'>";
                 class TableRows extends RecursiveIteratorIterator { 
                     function __construct($it) { 
                         parent::__construct($it, self::LEAVES_ONLY); 
                     }
 
                     function current() {
-                        return "<td style='width:150px;border:1px solid black;'>" . parent::current(). "</td>";
+                        return "<td>" . parent::current(). "</td>";
                     }
 
                     function beginChildren() { 
@@ -104,7 +142,8 @@
 
                     $con = new PDO("mysql:host=$SERVER;dbname=$DATABASE", $USERNAME, $PASSWORD);
                     $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                    $stmt = $con->prepare("SELECT * FROM Watchlist NATURAL JOIN SelectedFor NATURAL JOIN Player NATURAL JOIN Creates where Fan_ID = $fan_id"); 
+                    $sql = "SELECT Name, Number, Position, Year, Rating FROM Watchlist NATURAL JOIN SelectedFor NATURAL JOIN Player NATURAL JOIN Creates where Fan_ID = $fan_id";
+				    $stmt = $con->prepare ($sql); 
                     $stmt->execute();
 
                     $result = $stmt->setFetchMode(PDO::FETCH_ASSOC); 
@@ -113,12 +152,12 @@
                     }
                     
                     // adding stuff
-                    $field1 = 8;
+                    /*$field1 = 8;
                     $field2 = "Eight";
                     $add = $con->prepare("INSERT INTO Watchlist(Watchlist_ID, Watchlist_Name) VALUES(:field1,:field2)");
                     $add->execute(array(':field1' => $field1, ':field2' => $field2));
                     $affected_rows = $add->rowCount();
-
+*/
                     //deleting stuff ** currently not working
                     // $deleteme = 5;
                     // $del = $con->prepare("DELETE FROM Watchlist WHERE Watchlist_ID=:deleteme");
@@ -128,9 +167,27 @@
 
 
                     ?>
-                    test2
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
                 </div>
             </div>
+            <div class='row'>
+            	<div class='col-lg-4'>
+            	<h4>Add Players</h4>
+            	</div>
+            	<div class='col-lg-4'>	
+					<h5>Player</h5>
+					        <select id="player">
+					        </select>
+				</div>
+					<br>
+            		<a href='#' class="btn btn-primary">Add</a>
+            	
+            </div>
+
         </div>
     </div>
 
