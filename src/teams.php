@@ -166,21 +166,25 @@
 			
 			</div>
         </div>
-    </div>
 
     <h3 align="center">Team</h3>
     <div align="center" id="team_select">
         <select id="team">
         </select>
+        <button class="btn btn-info" onclick="getData();">>></button>
+    </div>
+    <div class='col-lg-12 text-center'>
+    </br>
+    	<a href="addTeam.php"><button type="button" class="btn btn-primary" >+ Add Team</button></a>
+		<a href="removeTeam.php"><button type="button" class="btn btn-danger" >- Remove Team</button></a>
     </div>
 
     <br>
-    <div align="center">
-        <button class="btn btn-primary" onclick="getData();">Load Team Data</button>
-    </div>
+  	<br>
+  	<br>
 
     <div id="tables">
-        <h3 align="center">Coaches</h3>
+        <h2 align="center">Coaches</h2>
         <table id="coaches" class="table table-hover" style="width: 70%" align="center">
             <thead>
             <tr>
@@ -231,14 +235,15 @@
     <br>
 
     <div class="row top100" style="text-align: center;">
-        <a href="addTeam.php"><button type="button" class="btn btn-primary" >Add Teams</button></a>
+        
     </div>
 
     <br>
 
     <div class="row top100" style="text-align: center;">
-        <a href="removeTeam.php"><button type="button" class="btn btn-primary" >Remove Teams</button></a>
+        
     </div>
+   </div>
 
 
 </body>

@@ -238,8 +238,8 @@
 		        			<select id="watchlist2" name="watchlist2">
 		        			</select>
 
-					       	<input type="submit" name="add" class="btn btn-info" value="add">
-					       	<input type="submit" name="drop" class="btn btn-danger" value="drop">
+					       	<input type="submit" name="add" class="btn btn-info" value="+ add">
+					       	<input type="submit" name="drop" class="btn btn-danger" value="- drop">
 				</form>
 
 
