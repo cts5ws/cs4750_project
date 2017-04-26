@@ -2,59 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c2108349-03ee-425c-b08f-75688082c17a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/font-awesome/fonts/FontAwesome.otf" afterPath="$PROJECT_DIR$/src/font-awesome/fonts/FontAwesome.otf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/font-awesome/fonts/fontawesome-webfont.eot" afterPath="$PROJECT_DIR$/src/font-awesome/fonts/fontawesome-webfont.eot" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/font-awesome/fonts/fontawesome-webfont.ttf" afterPath="$PROJECT_DIR$/src/font-awesome/fonts/fontawesome-webfont.ttf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/font-awesome/fonts/fontawesome-webfont.woff" afterPath="$PROJECT_DIR$/src/font-awesome/fonts/fontawesome-webfont.woff" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/font-awesome/fonts/fontawesome-webfont.woff2" afterPath="$PROJECT_DIR$/src/font-awesome/fonts/fontawesome-webfont.woff2" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/init.sql" afterPath="$PROJECT_DIR$/init.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/.gitignore" afterPath="$PROJECT_DIR$/src/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/about.html" afterPath="$PROJECT_DIR$/src/about.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/addTeam.php" afterPath="$PROJECT_DIR$/src/addTeam.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/font-awesome/HELP-US-OUT.txt" afterPath="$PROJECT_DIR$/src/font-awesome/HELP-US-OUT.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/font-awesome/css/font-awesome.css" afterPath="$PROJECT_DIR$/src/font-awesome/css/font-awesome.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/font-awesome/css/font-awesome.min.css" afterPath="$PROJECT_DIR$/src/font-awesome/css/font-awesome.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/font-awesome/fonts/fontawesome-webfont.svg" afterPath="$PROJECT_DIR$/src/font-awesome/fonts/fontawesome-webfont.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/font-awesome/less/animated.less" afterPath="$PROJECT_DIR$/src/font-awesome/less/animated.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/font-awesome/less/bordered-pulled.less" afterPath="$PROJECT_DIR$/src/font-awesome/less/bordered-pulled.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/font-awesome/less/core.less" afterPath="$PROJECT_DIR$/src/font-awesome/less/core.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/font-awesome/less/fixed-width.less" afterPath="$PROJECT_DIR$/src/font-awesome/less/fixed-width.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/font-awesome/less/font-awesome.less" afterPath="$PROJECT_DIR$/src/font-awesome/less/font-awesome.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/font-awesome/less/icons.less" afterPath="$PROJECT_DIR$/src/font-awesome/less/icons.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/font-awesome/less/larger.less" afterPath="$PROJECT_DIR$/src/font-awesome/less/larger.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/font-awesome/less/list.less" afterPath="$PROJECT_DIR$/src/font-awesome/less/list.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/font-awesome/less/mixins.less" afterPath="$PROJECT_DIR$/src/font-awesome/less/mixins.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/font-awesome/less/path.less" afterPath="$PROJECT_DIR$/src/font-awesome/less/path.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/font-awesome/less/rotated-flipped.less" afterPath="$PROJECT_DIR$/src/font-awesome/less/rotated-flipped.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/font-awesome/less/screen-reader.less" afterPath="$PROJECT_DIR$/src/font-awesome/less/screen-reader.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/font-awesome/less/stacked.less" afterPath="$PROJECT_DIR$/src/font-awesome/less/stacked.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/font-awesome/less/variables.less" afterPath="$PROJECT_DIR$/src/font-awesome/less/variables.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/font-awesome/scss/_animated.scss" afterPath="$PROJECT_DIR$/src/font-awesome/scss/_animated.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/font-awesome/scss/_bordered-pulled.scss" afterPath="$PROJECT_DIR$/src/font-awesome/scss/_bordered-pulled.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/font-awesome/scss/_core.scss" afterPath="$PROJECT_DIR$/src/font-awesome/scss/_core.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/font-awesome/scss/_fixed-width.scss" afterPath="$PROJECT_DIR$/src/font-awesome/scss/_fixed-width.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/font-awesome/scss/_icons.scss" afterPath="$PROJECT_DIR$/src/font-awesome/scss/_icons.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/font-awesome/scss/_larger.scss" afterPath="$PROJECT_DIR$/src/font-awesome/scss/_larger.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/font-awesome/scss/_list.scss" afterPath="$PROJECT_DIR$/src/font-awesome/scss/_list.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/font-awesome/scss/_mixins.scss" afterPath="$PROJECT_DIR$/src/font-awesome/scss/_mixins.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/font-awesome/scss/_path.scss" afterPath="$PROJECT_DIR$/src/font-awesome/scss/_path.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/font-awesome/scss/_rotated-flipped.scss" afterPath="$PROJECT_DIR$/src/font-awesome/scss/_rotated-flipped.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/font-awesome/scss/_screen-reader.scss" afterPath="$PROJECT_DIR$/src/font-awesome/scss/_screen-reader.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/font-awesome/scss/_stacked.scss" afterPath="$PROJECT_DIR$/src/font-awesome/scss/_stacked.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/font-awesome/scss/_variables.scss" afterPath="$PROJECT_DIR$/src/font-awesome/scss/_variables.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/font-awesome/scss/font-awesome.scss" afterPath="$PROJECT_DIR$/src/font-awesome/scss/font-awesome.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/handleAddTeam.php" afterPath="$PROJECT_DIR$/src/handleAddTeam.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/handleRemoveTeam.php" afterPath="$PROJECT_DIR$/src/handleRemoveTeam.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/league_play.php" afterPath="$PROJECT_DIR$/src/league_play.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/loadPlayers.php" afterPath="$PROJECT_DIR$/src/loadPlayers.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/loadTeamData.php" afterPath="$PROJECT_DIR$/src/loadTeamData.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/loadTeams.php" afterPath="$PROJECT_DIR$/src/loadTeams.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/loadTeamsToAdd.php" afterPath="$PROJECT_DIR$/src/loadTeamsToAdd.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/loadTeamsToRemove.php" afterPath="$PROJECT_DIR$/src/loadTeamsToRemove.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/removeTeam.php" afterPath="$PROJECT_DIR$/src/removeTeam.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/teams.php" afterPath="$PROJECT_DIR$/src/teams.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/watchlist.php" afterPath="$PROJECT_DIR$/src/watchlist.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -65,10 +13,10 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
+    <splitter split-orientation="horizontal" split-proportion="0.9">
       <split-first>
         <leaf>
-          <file leaf-file-name="league_play.php" pinned="false" current-in-tab="true">
+          <file leaf-file-name="league_play.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/league_play.php">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="580">
@@ -76,6 +24,18 @@
                   <folding>
                     <element signature="n#style#0;n#table#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
                     <element signature="n#style#0;n#table#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="watchlist.php" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/watchlist.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="0">
+                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                  <folding>
+                    <marker date="1493191258135" expanded="true" signature="6105:6245" ph="SELECT Name,... " />
                   </folding>
                 </state>
               </provider>
@@ -120,6 +80,7 @@
         <option value="$PROJECT_DIR$/addTeamToLeague.php" />
         <option value="$PROJECT_DIR$/src/removeFanFromLeague.php" />
         <option value="$PROJECT_DIR$/src/league_play.php" />
+        <option value="$PROJECT_DIR$/src/watchlist.php" />
       </list>
     </option>
   </component>
@@ -277,12 +238,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1493189350427</updated>
-      <workItem from="1493189353712" duration="1823000" />
+      <workItem from="1493189353712" duration="1960000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1823000" />
+    <option name="totallyTimeSpent" value="1960000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="24" width="1602" height="853" extended-state="6" />
@@ -318,16 +279,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/watchlist.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1581">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1493188825503" expanded="true" signature="4890:5030" ph="SELECT Name,... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/loadTeams.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -377,6 +328,16 @@
           <folding>
             <element signature="n#style#0;n#table#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#table#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/watchlist.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1493191258135" expanded="true" signature="6105:6245" ph="SELECT Name,... " />
           </folding>
         </state>
       </provider>
