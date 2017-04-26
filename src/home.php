@@ -69,7 +69,7 @@ if(!isset($_SESSION["login"])){
         <div class="row">
             <div class = "col-lg-12">
                 <span style="color: black; ">
-                    <h2>Welcome 
+                    <h2>Welcome
                         <?php
                             session_start();
                             echo $_SESSION["username"];

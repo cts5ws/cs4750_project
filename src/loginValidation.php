@@ -15,6 +15,8 @@ $password = $_POST["password"];
 $result = mysqli_query($con, "select * from `Fan` where Username = '$username' and Password = MD5('$password')");
 $rowcount=mysqli_num_rows($result);
 
+$result = mysqli_fetch_assoc($result);
+
 if($rowcount == 0){
 
  $_SESSION["login_error"] = "Your username/password combination was not recognized.";
@@ -26,6 +28,7 @@ if($rowcount == 0){
  session_start();
  $_SESSION["login"] = "valid";
  $_SESSION["username"] = $username;
+ $_SESSION["fan_id"] = $result['Fan_ID'];
  header("Refresh:0; url=home.php");
 }
 

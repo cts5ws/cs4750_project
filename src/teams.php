@@ -26,6 +26,94 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <script src="http://code.jquery.com/jquery-1.11.3.js"></script>
+
+    <script>
+        $(document).ready();
+
+        function getFavoriteTeams(){
+            $.ajax({
+                url : "loadTeams.php",
+                success :
+                    function(data){
+                        var teams = JSON.parse(data);
+
+                        var arrayLength = teams.length;
+                        for(var i = 0; i < arrayLength; i++){
+                            $('#team').append($('<option>', {
+                                value : teams[i]["Team_ID"],
+                                text : teams[i]["Name"]
+                            }));
+                        }
+                    }
+            });
+        }
+
+        function getData(){
+            var teamID = document.getElementById("team").value;
+
+            $("tr[id=row]").remove();
+
+            $.ajax({
+                url : "loadTeamData.php",
+                method : "POST",
+                data:{teamID : teamID},
+                success:
+                    function(data){
+
+                        var info = JSON.parse(data);
+
+                        var coaches = info.coaches;
+                        var players = info.players;
+                        var matches = info.matches;
+                        var teams = info.teams;
+
+                        var arrayLength = coaches.length;
+                        for(var i = 0; i < arrayLength; i++){
+
+                            var row = '<tr id="row"><td>'.concat(coaches[i]['Name']).concat('</td><td>')
+                                .concat(coaches[i]['Title']).concat('</td></tr>');
+                            $('#coaches').append(row);
+                        }
+
+                        var arrayLength = players.length;
+                        for(var i = 0; i < arrayLength; i++){
+
+                            var row = '<tr id="row"><td>'.concat(players[i]['Name']).concat('</td><td>')
+                                .concat(players[i]['Number']).concat('</td><td>')
+                                .concat(players[i]['Position']).concat('</td><td>')
+                                .concat(players[i]['Year']).concat('</td><td>')
+                                .concat(players[i]['Rating']).concat('</td></tr>');
+                            $('#players').append(row);
+                        }
+
+                        var arrayLength = teams.length;
+                        var teamMap = new Array();
+                        for(var i = 0; i < arrayLength; i++){
+                            teamMap[teams[i]['Team_ID']] = teams[i]['Name'];
+                        }
+
+                        var arrayLength = matches.length;
+                        for(var i = 0; i < arrayLength; i++){
+
+                            var row = '<tr id="row"><td>'.concat(  teamMap[matches[i]['Team1_ID']]  ).concat('</td><td>')
+                                .concat(  teamMap[matches[i]['Team2_ID']]  ).concat('</td><td>')
+                                .concat(matches[i]['Team1_Score']).concat('</td><td>')
+                                .concat(matches[i]['Team2_Score']).concat('</td><td>')
+                                .concat(matches[i]['Date']).concat('</td><td>')
+                                .concat(matches[i]['Location']).concat('</td></tr>');
+
+                            $('#matches').append(row);
+                        }
+
+                    }
+            });
+
+        }
+
+        getFavoriteTeams();
+
+    </script>
 </head>
 
 <body>
@@ -76,6 +164,65 @@
 			</div>
         </div>
     </div>
+
+    <h3 align="center">Team</h3>
+    <div align="center" id="team_select">
+        <select id="team">
+        </select>
+    </div>
+
+    <br>
+
+    <div align="center">
+        <button onclick="getData();">Load Team Data</button>
+    </div>
+
+    <h3 align="center">Coaches</h3>
+    <table id="coaches" class="table table-hover" style="width: 70%" align="center">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Title</th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+    <br>
+
+    <h3 align="center">Roster</h3>
+    <table id="players" class="table table-hover" style="width: 70%" align="center">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Number</th>
+            <th>Position</th>
+            <th>Year</th>
+            <th>Rating</th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+    <br>
+
+    <h3 align="center">Matches</h3>
+    <table id="matches" class="table table-hover" style="width: 70%" align="center">
+        <thead>
+        <tr>
+            <th>Team 1</th>
+            <th>Team 2</th>
+            <th>Team 1 Score</th>
+            <th>Team 2 Score</th>
+            <th>Date</th>
+            <th>Location</th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
 
 </body>
 </html>
