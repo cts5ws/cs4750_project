@@ -73,6 +73,46 @@
             <div class="col-lg-12">
 
                 <h1><i class="fa fa-fw fa-list"></i> Watchlist Page</h1>
+		    
+		       test1
+
+
+                   <?php
+                                  echo "<table style='border: solid 1px black;'>";
+                                  class TableRows extends RecursiveIteratorIterator { 
+                    function __construct($it) { 
+                        parent::__construct($it, self::LEAVES_ONLY); 
+                    }
+
+                    function current() {
+                        return "<td style='width:150px;border:1px solid black;'>" . parent::current(). "</td>";
+                    }
+
+                    function beginChildren() { 
+                        echo "<tr>"; 
+                    } 
+
+                    function endChildren() { 
+                        echo "</tr>" . "\n";
+                    } 
+                } 
+                    session_start();
+
+                    include_once("./library.php"); // To connect to the database
+
+
+                    $con = new PDO("mysql:host=$SERVER;dbname=$DATABASE", $USERNAME, $PASSWORD);
+                    $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                    $stmt = $con->prepare("SELECT * FROM Watchlist NATURAL JOIN SelectedFor NATURAL JOIN Player NATURAL JOIN Creates where Fan_ID = 24"); 
+                    $stmt->execute();
+
+                    $result = $stmt->setFetchMode(PDO::FETCH_ASSOC); 
+                    foreach(new TableRows(new RecursiveArrayIterator($stmt->fetchAll())) as $k=>$v) { 
+                        echo $v;
+                    }
+                    
+    ?>
+			         test2
 			
 			</div>
         </div>
