@@ -1,17 +1,23 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
--- https://www.phpmyadmin.net/
+-- version 4.4.13.1deb1
+-- http://www.phpmyadmin.net
 --
--- Host: localhost:8889
--- Generation Time: Apr 26, 2017 at 09:56 AM
--- Server version: 5.6.35
--- PHP Version: 7.1.1
+-- Host: localhost
+-- Generation Time: Apr 26, 2017 at 07:48 PM
+-- Server version: 5.6.31-0ubuntu0.15.10.1
+-- PHP Version: 5.6.11-1ubuntu3.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
 --
--- Database: `cs4750`
+-- Database: `database_project`
 --
 
 -- --------------------------------------------------------
@@ -20,11 +26,11 @@ SET time_zone = "+00:00";
 -- Table structure for table `Coach`
 --
 
-CREATE TABLE `Coach` (
+CREATE TABLE IF NOT EXISTS `Coach` (
   `Coach_ID` int(10) NOT NULL,
   `Name` varchar(64) DEFAULT NULL,
   `Title` varchar(64) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `Coach`
@@ -32,7 +38,8 @@ CREATE TABLE `Coach` (
 
 INSERT INTO `Coach` (`Coach_ID`, `Name`, `Title`) VALUES
 (1, 'Tony Bennet', 'Head Coach'),
-(2, 'Mike Krzyzewski', 'Head Coach');
+(2, 'Mike Krzyzewski', 'Head Coach'),
+(3, 'Roy Williams', 'Head Coach');
 
 -- --------------------------------------------------------
 
@@ -40,7 +47,7 @@ INSERT INTO `Coach` (`Coach_ID`, `Name`, `Title`) VALUES
 -- Table structure for table `Coaches`
 --
 
-CREATE TABLE `Coaches` (
+CREATE TABLE IF NOT EXISTS `Coaches` (
   `Coach_ID` int(10) DEFAULT NULL,
   `Team_ID` int(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -51,7 +58,8 @@ CREATE TABLE `Coaches` (
 
 INSERT INTO `Coaches` (`Coach_ID`, `Team_ID`) VALUES
 (1, 1),
-(2, 2);
+(2, 2),
+(3, 3);
 
 -- --------------------------------------------------------
 
@@ -59,9 +67,9 @@ INSERT INTO `Coaches` (`Coach_ID`, `Team_ID`) VALUES
 -- Table structure for table `Creates`
 --
 
-CREATE TABLE `Creates` (
+CREATE TABLE IF NOT EXISTS `Creates` (
   `Fan_ID` int(10) DEFAULT NULL,
-  `Watchlist_ID` int(10) NOT NULL
+  `Watchlist_ID` int(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -69,37 +77,11 @@ CREATE TABLE `Creates` (
 --
 
 INSERT INTO `Creates` (`Fan_ID`, `Watchlist_ID`) VALUES
-(19, 16),
-(2, 17),
-(1, 18),
-(2, 19),
-(3, 20),
-(4, 21),
-(21, 22),
-(21, 23),
-(21, 24);
-
---
--- Triggers `Creates`
---
-DELIMITER $$
-CREATE TRIGGER `Update Watchlist2` AFTER INSERT ON `Creates` FOR EACH ROW INSERT INTO Watchlist(Watchlist_Name) VALUES ('New Watchlist')
-$$
-DELIMITER ;
-
--- --------------------------------------------------------
-
---
--- Stand-in structure for view `defensive stats`
--- (See below for the actual view)
---
-CREATE TABLE `Defensive Stats` (
-`Player_ID` int(10)
-,`Rebounds` int(5)
-,`Steals` int(5)
-,`Blocks` int(5)
-,`Turnovers` int(5)
-);
+(16, 9),
+(15, 1),
+(17, 10),
+(16, 11),
+(21, 12);
 
 -- --------------------------------------------------------
 
@@ -107,10 +89,20 @@ CREATE TABLE `Defensive Stats` (
 -- Table structure for table `EnteredIn`
 --
 
-CREATE TABLE `EnteredIn` (
+CREATE TABLE IF NOT EXISTS `EnteredIn` (
   `League_ID` int(10) DEFAULT NULL,
   `Watchlist_ID` int(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `EnteredIn`
+--
+
+INSERT INTO `EnteredIn` (`League_ID`, `Watchlist_ID`) VALUES
+(9, 1),
+(10, 9),
+(10, 10),
+(9, 9);
 
 -- --------------------------------------------------------
 
@@ -118,11 +110,11 @@ CREATE TABLE `EnteredIn` (
 -- Table structure for table `Fan`
 --
 
-CREATE TABLE `Fan` (
+CREATE TABLE IF NOT EXISTS `Fan` (
   `Fan_ID` int(10) NOT NULL,
-  `Username` varchar(32) NOT NULL,
+  `Username` varchar(20) NOT NULL,
   `Password` varchar(32) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `Fan`
@@ -134,48 +126,32 @@ INSERT INTO `Fan` (`Fan_ID`, `Username`, `Password`) VALUES
 (17, 'Jacob', 'dc647eb65e6711e155375218212b3964'),
 (18, 'Zach', 'dc647eb65e6711e155375218212b3964'),
 (19, 'Jeff', 'dc647eb65e6711e155375218212b3964'),
-(21, 'zachh', '6f749bf4e5bb6903f28c6f030daa5a1a');
-
---
--- Triggers `Fan`
---
-DELIMITER $$
-CREATE TRIGGER `Update Fan ID in Favorites` BEFORE INSERT ON `Fan` FOR EACH ROW INSERT INTO Favorites (Team_ID) VALUES (NEW.Fan_ID)
-$$
-DELIMITER ;
+(20, 'test', '098f6bcd4621d373cade4e832627b4f6'),
+(21, 'john', '527bd5b5d689e2c32ae974c6229ff785');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `favorites`
+-- Table structure for table `Favorites`
 --
 
-CREATE TABLE `Favorites` (
+CREATE TABLE IF NOT EXISTS `Favorites` (
   `Fan_ID` int(10) DEFAULT NULL,
   `Team_ID` int(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `favorites`
+-- Dumping data for table `Favorites`
 --
 
 INSERT INTO `Favorites` (`Fan_ID`, `Team_ID`) VALUES
-(19, 3),
-(21, 1),
-(21, 2),
-(21, 3);
-
---
--- Triggers `favorites`
---
-DELIMITER $$
-CREATE TRIGGER `Update Creates` BEFORE INSERT ON `Favorites` FOR EACH ROW INSERT INTO Creates (Fan_ID) SELECT NEW.Fan_ID
-$$
-DELIMITER ;
-DELIMITER $$
-CREATE TRIGGER `Update Watchlist` AFTER INSERT ON `Favorites` FOR EACH ROW INSERT INTO Watchlist (Watchlist_Name) SELECT Team.Name FROM Team WHERE Team.Team_ID = NEW.Team_ID
-$$
-DELIMITER ;
+(15, 1),
+(17, 1),
+(18, 1),
+(19, 1),
+(15, 2),
+(16, 1),
+(21, 1);
 
 -- --------------------------------------------------------
 
@@ -183,18 +159,19 @@ DELIMITER ;
 -- Table structure for table `League`
 --
 
-CREATE TABLE `League` (
+CREATE TABLE IF NOT EXISTS `League` (
   `League_ID` int(10) NOT NULL,
   `League_Admin` int(10) NOT NULL,
   `League_Name` varchar(64) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `League`
 --
 
 INSERT INTO `League` (`League_ID`, `League_Admin`, `League_Name`) VALUES
-(1, 15, 'League1');
+(9, 16, 'l3'),
+(10, 16, 'l4');
 
 -- --------------------------------------------------------
 
@@ -202,7 +179,7 @@ INSERT INTO `League` (`League_ID`, `League_Admin`, `League_Name`) VALUES
 -- Table structure for table `Match`
 --
 
-CREATE TABLE `Match` (
+CREATE TABLE IF NOT EXISTS `Match` (
   `Match_ID` int(10) NOT NULL,
   `Team1_ID` int(10) DEFAULT NULL,
   `Team2_ID` int(10) DEFAULT NULL,
@@ -210,7 +187,7 @@ CREATE TABLE `Match` (
   `Location` varchar(64) DEFAULT NULL,
   `Team1_Score` int(10) DEFAULT NULL,
   `Team2_Score` int(10) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `Match`
@@ -224,31 +201,17 @@ INSERT INTO `Match` (`Match_ID`, `Team1_ID`, `Team2_ID`, `Date`, `Location`, `Te
 -- --------------------------------------------------------
 
 --
--- Stand-in structure for view `offensive stats`
--- (See below for the actual view)
---
-CREATE TABLE `Offensive Stats` (
-`Player_ID` int(10)
-,`FGP` decimal(5,0)
-,`3PP` decimal(5,0)
-,`Assists` int(5)
-,`PTS` int(5)
-);
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `Player`
 --
 
-CREATE TABLE `Player` (
+CREATE TABLE IF NOT EXISTS `Player` (
   `Player_ID` int(10) NOT NULL,
   `Name` varchar(64) NOT NULL,
   `Number` int(2) NOT NULL,
   `Position` varchar(10) NOT NULL,
   `Year` int(2) NOT NULL,
   `Rating` int(3) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `Player`
@@ -275,7 +238,7 @@ INSERT INTO `Player` (`Player_ID`, `Name`, `Number`, `Position`, `Year`, `Rating
 -- Table structure for table `PlaysFor`
 --
 
-CREATE TABLE `PlaysFor` (
+CREATE TABLE IF NOT EXISTS `PlaysFor` (
   `Player_ID` int(10) DEFAULT NULL,
   `Team_ID` int(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -305,7 +268,7 @@ INSERT INTO `PlaysFor` (`Player_ID`, `Team_ID`) VALUES
 -- Table structure for table `Plays_In`
 --
 
-CREATE TABLE `Plays_In` (
+CREATE TABLE IF NOT EXISTS `Plays_In` (
   `Player_ID` int(10) DEFAULT NULL,
   `Match_ID` int(10) DEFAULT NULL,
   `FGP` decimal(5,0) DEFAULT NULL,
@@ -323,9 +286,9 @@ CREATE TABLE `Plays_In` (
 --
 
 INSERT INTO `Plays_In` (`Player_ID`, `Match_ID`, `FGP`, `3PP`, `Rebounds`, `Assists`, `Steals`, `Blocks`, `Turnovers`, `PTS`) VALUES
-(1, 3, '1', '0', 4, 6, 33, 2, 1, 17),
-(5, 2, '1', '0', 2, 3, 1, 0, 3, 18),
-(10, 3, '55', '45', 3, 2, 0, 5, 2, 11);
+(1, 3, 1, 0, 4, 6, 33, 2, 1, 17),
+(5, 2, 1, 0, 2, 3, 1, 0, 3, 18),
+(10, 3, 55, 45, 3, 2, 0, 5, 2, 11);
 
 -- --------------------------------------------------------
 
@@ -333,7 +296,7 @@ INSERT INTO `Plays_In` (`Player_ID`, `Match_ID`, `FGP`, `3PP`, `Rebounds`, `Assi
 -- Table structure for table `SelectedFor`
 --
 
-CREATE TABLE `SelectedFor` (
+CREATE TABLE IF NOT EXISTS `SelectedFor` (
   `Watchlist_ID` int(10) DEFAULT NULL,
   `Player_ID` int(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -343,8 +306,21 @@ CREATE TABLE `SelectedFor` (
 --
 
 INSERT INTO `SelectedFor` (`Watchlist_ID`, `Player_ID`) VALUES
-(19, 9),
-(20, 13);
+(1, 1),
+(9, 1),
+(9, 2),
+(9, 3),
+(9, 4),
+(1, 1),
+(1, 2),
+(1, 3),
+(10, 1),
+(10, 2),
+(11, 10),
+(11, 1),
+(12, 1),
+(12, 7),
+(12, 11);
 
 -- --------------------------------------------------------
 
@@ -352,12 +328,12 @@ INSERT INTO `SelectedFor` (`Watchlist_ID`, `Player_ID`) VALUES
 -- Table structure for table `Team`
 --
 
-CREATE TABLE `Team` (
+CREATE TABLE IF NOT EXISTS `Team` (
   `Name` varchar(64) DEFAULT NULL,
   `Mascot` varchar(20) DEFAULT NULL,
   `Team_ID` int(10) NOT NULL,
   `Rival` int(10) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Team attributes for each ACC BBall Team';
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1 COMMENT='Team attributes for each ACC BBall Team';
 
 --
 -- Dumping data for table `Team`
@@ -374,46 +350,21 @@ INSERT INTO `Team` (`Name`, `Mascot`, `Team_ID`, `Rival`) VALUES
 -- Table structure for table `Watchlist`
 --
 
-CREATE TABLE `Watchlist` (
+CREATE TABLE IF NOT EXISTS `Watchlist` (
   `Watchlist_ID` int(10) NOT NULL,
   `Watchlist_Name` varchar(64) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `Watchlist`
 --
 
 INSERT INTO `Watchlist` (`Watchlist_ID`, `Watchlist_Name`) VALUES
-(23, 'University of Virginia'),
-(25, 'Duke University'),
-(26, 'New Watchlist'),
-(27, 'University of North Carolina');
-
---
--- Triggers `Watchlist`
---
-DELIMITER $$
-CREATE TRIGGER `Delete SelectedFor` BEFORE DELETE ON `Watchlist` FOR EACH ROW DELETE FROM SelectedFor WHERE OLD.Watchlist_ID = SelectedFor.Watchlist_ID
-$$
-DELIMITER ;
-
--- --------------------------------------------------------
-
---
--- Structure for view `defensive stats`
--- --
--- DROP TABLE IF EXISTS `Defensive Stats`;
-
--- CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `Defensive Stats`  AS  select `Plays_In`.`Player_ID` AS `Player_ID`,`Plays_In`.`Rebounds` AS `Rebounds`,`Plays_In`.`Steals` AS `Steals`,`Plays_In`.`Blocks` AS `Blocks`,`Plays_In`.`Turnovers` AS `Turnovers` from `Plays_In` ;
-
--- --------------------------------------------------------
-
---
--- Structure for view `offensive stats`
--- --
--- DROP TABLE IF EXISTS `Offensive Stats`;
-
--- CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `Offensive Stats`  AS  select `Plays_In`.`Player_ID` AS `Player_ID`,`Plays_In`.`FGP` AS `FGP`,`Plays_In`.`3PP` AS `3PP`,`Plays_In`.`Assists` AS `Assists`,`Plays_In`.`PTS` AS `PTS` from `Plays_In` ;
+(1, 'ChaseWatchList'),
+(9, 'ColeWatchList'),
+(10, 'JacobList'),
+(11, 'cole2'),
+(12, 'ColeList');
 
 --
 -- Indexes for dumped tables
@@ -456,7 +407,7 @@ ALTER TABLE `Fan`
   ADD KEY `Fan_ID_2` (`Fan_ID`);
 
 --
--- Indexes for table `favorites`
+-- Indexes for table `Favorites`
 --
 ALTER TABLE `Favorites`
   ADD KEY `Fan_ID` (`Fan_ID`),
@@ -500,6 +451,13 @@ ALTER TABLE `Plays_In`
   ADD KEY `Match_ID` (`Match_ID`);
 
 --
+-- Indexes for table `SelectedFor`
+--
+ALTER TABLE `SelectedFor`
+  ADD KEY `Watchlist_ID` (`Watchlist_ID`),
+  ADD KEY `Player_ID` (`Player_ID`);
+
+--
 -- Indexes for table `Team`
 --
 ALTER TABLE `Team`
@@ -521,42 +479,37 @@ ALTER TABLE `Watchlist`
 -- AUTO_INCREMENT for table `Coach`
 --
 ALTER TABLE `Coach`
-  MODIFY `Coach_ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
---
--- AUTO_INCREMENT for table `Creates`
---
-ALTER TABLE `Creates`
-  MODIFY `Watchlist_ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `Coach_ID` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `Fan`
 --
 ALTER TABLE `Fan`
-  MODIFY `Fan_ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `Fan_ID` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=22;
 --
 -- AUTO_INCREMENT for table `League`
 --
 ALTER TABLE `League`
-  MODIFY `League_ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `League_ID` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `Match`
 --
 ALTER TABLE `Match`
-  MODIFY `Match_ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `Match_ID` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `Player`
 --
 ALTER TABLE `Player`
-  MODIFY `Player_ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `Player_ID` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT for table `Team`
 --
 ALTER TABLE `Team`
-  MODIFY `Team_ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `Team_ID` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `Watchlist`
 --
 ALTER TABLE `Watchlist`
-  MODIFY `Watchlist_ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `Watchlist_ID` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
 --
 -- Constraints for dumped tables
 --
@@ -569,6 +522,13 @@ ALTER TABLE `Coaches`
   ADD CONSTRAINT `Coaches_ibfk_2` FOREIGN KEY (`Team_ID`) REFERENCES `Team` (`Team_ID`);
 
 --
+-- Constraints for table `Creates`
+--
+ALTER TABLE `Creates`
+  ADD CONSTRAINT `Creates_ibfk_1` FOREIGN KEY (`Fan_ID`) REFERENCES `Fan` (`Fan_ID`),
+  ADD CONSTRAINT `Creates_ibfk_2` FOREIGN KEY (`Watchlist_ID`) REFERENCES `Watchlist` (`Watchlist_ID`);
+
+--
 -- Constraints for table `EnteredIn`
 --
 ALTER TABLE `EnteredIn`
@@ -576,11 +536,11 @@ ALTER TABLE `EnteredIn`
   ADD CONSTRAINT `EnteredIn_ibfk_2` FOREIGN KEY (`Watchlist_ID`) REFERENCES `Watchlist` (`Watchlist_ID`);
 
 --
--- Constraints for table `favorites`
+-- Constraints for table `Favorites`
 --
 ALTER TABLE `Favorites`
-  ADD CONSTRAINT `Favorties_ibfk_1` FOREIGN KEY (`Fan_ID`) REFERENCES `Fan` (`Fan_ID`),
-  ADD CONSTRAINT `Favorties_ibfk_2` FOREIGN KEY (`Team_ID`) REFERENCES `Team` (`Team_ID`);
+  ADD CONSTRAINT `Favorites_ibfk_1` FOREIGN KEY (`Fan_ID`) REFERENCES `Fan` (`Fan_ID`),
+  ADD CONSTRAINT `Favorites_ibfk_2` FOREIGN KEY (`Team_ID`) REFERENCES `Team` (`Team_ID`);
 
 --
 -- Constraints for table `League`
@@ -615,3 +575,7 @@ ALTER TABLE `Plays_In`
 ALTER TABLE `SelectedFor`
   ADD CONSTRAINT `SelectedFor_ibfk_1` FOREIGN KEY (`Watchlist_ID`) REFERENCES `Watchlist` (`Watchlist_ID`),
   ADD CONSTRAINT `SelectedFor_ibfk_2` FOREIGN KEY (`Player_ID`) REFERENCES `Player` (`Player_ID`);
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
