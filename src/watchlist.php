@@ -82,6 +82,33 @@
     	getWatchlist();
     </script>
 
+    <script>
+    	$(document).ready();
+    	
+    	function getWatchlist2(){
+			$.ajax({
+                url : "loadLists.php",
+                success :
+                    function(data){
+
+                        console.log(data);
+
+                        var lists = JSON.parse(data);
+
+                        var arrayLength = lists.length;
+                        for(var i = 0; i < arrayLength; i++){
+                            $('#watchlist2').append($('<option>', {
+                                value : lists[i]["Watchlist_ID"],
+                                text : lists[i]["Watchlist_Name"]
+                            }));
+                        }
+                    }
+            });
+    	}
+    	getWatchlist2();
+    </script>
+
+
 
 
 
@@ -143,7 +170,7 @@
 		<div class="col-lg-12 text-center">
 			<br>
 			<a href='addWatchlist.php' class="btn btn-primary">Add New Watchlist</a>
-			<a href='#' class="btn btn-primary">Remove Watchlist</a>
+			<a href='removeWatchlist.php' class="btn btn-primary">Remove Watchlist</a>
 			<br>
 		</div>
 	</div>
@@ -201,21 +228,6 @@
                         echo $v;
                     }
                     
-                    // adding stuff
-                    /*$field1 = 8;
-                    $field2 = "Eight";
-                    $add = $con->prepare("INSERT INTO Watchlist(Watchlist_ID, Watchlist_Name) VALUES(:field1,:field2)");
-                    $add->execute(array(':field1' => $field1, ':field2' => $field2));
-                    $affected_rows = $add->rowCount();
-*/
-                    //deleting stuff ** currently not working
-                    // $deleteme = 5;
-                    // $del = $con->prepare("DELETE FROM Watchlist WHERE Watchlist_ID=:deleteme");
-                    // $del->bindValue(':deleteme', $deleteme, PDO::PARAM_INT);
-                    // $del->execute();
-                    // $affected_rows_del = $del->rowCount();
-
-
                     ?>
 
                     </tr>
@@ -228,12 +240,21 @@
             	<div class='col-lg-12 text-center'>
             	<br>
             	<h4>Add Player:</h4>
-					        <select id="player">
+            	<form action="handleAddDrop.php" method="post">
+					        <select id="player" name="player">
 					        </select>
+
+		        			<select id="watchlist2" name="watchlist2">
+		        			</select>
+
+					       	<input type="submit" name="add" class="btn btn-info" value="add">
+					       	<input type="submit" name="drop" class="btn btn-danger" value="drop">
+				</form>
+
+
 			    			<br>
 			    			<br>
-        		<a href='#' class="btn btn-primary">Add Player</a>
-        		<a href='#' class="btn btn-primary">Drop Player</a>
+
 				</div>
 
 
