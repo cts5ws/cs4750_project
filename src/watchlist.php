@@ -73,10 +73,7 @@
             <div class="col-lg-12">
 
                 <h1><i class="fa fa-fw fa-list"></i> Watchlist Page</h1>
-<<<<<<< HEAD
-			
-			</div>
-=======
+
                 test1
 
 
@@ -134,7 +131,6 @@
                     test2
                 </div>
             </div>
->>>>>>> d0b420d9ca49d6fd7e753c1d63190c1381f5edad
         </div>
     </div>
 
