@@ -151,7 +151,7 @@ DELIMITER ;
 -- Table structure for table `favorites`
 --
 
-CREATE TABLE `favorites` (
+CREATE TABLE `Favorites` (
   `Fan_ID` int(10) DEFAULT NULL,
   `Team_ID` int(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -228,7 +228,7 @@ INSERT INTO `Match` (`Match_ID`, `Team1_ID`, `Team2_ID`, `Date`, `Location`, `Te
 -- Stand-in structure for view `offensive stats`
 -- (See below for the actual view)
 --
-CREATE TABLE `offensive stats` (
+CREATE TABLE `Offensive Stats` (
 `Player_ID` int(10)
 ,`FGP` decimal(5,0)
 ,`3PP` decimal(5,0)
@@ -408,18 +408,18 @@ DELIMITER ;
 --
 -- Structure for view `defensive stats`
 --
-DROP TABLE IF EXISTS `defensive stats`;
+DROP TABLE IF EXISTS `Defensive Stats`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `defensive stats`  AS  select `plays_in`.`Player_ID` AS `Player_ID`,`plays_in`.`Rebounds` AS `Rebounds`,`plays_in`.`Steals` AS `Steals`,`plays_in`.`Blocks` AS `Blocks`,`plays_in`.`Turnovers` AS `Turnovers` from `plays_in` ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `Defensive Stats`  AS  select `Plays_In`.`Player_ID` AS `Player_ID`,`Plays_In`.`Rebounds` AS `Rebounds`,`Plays_In`.`Steals` AS `Steals`,`Plays_In`.`Blocks` AS `Blocks`,`Plays_In`.`Turnovers` AS `Turnovers` from `Plays_In` ;
 
 -- --------------------------------------------------------
 
 --
 -- Structure for view `offensive stats`
 --
-DROP TABLE IF EXISTS `offensive stats`;
+DROP TABLE IF EXISTS `Offensive Stats`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `offensive stats`  AS  select `plays_in`.`Player_ID` AS `Player_ID`,`plays_in`.`FGP` AS `FGP`,`plays_in`.`3PP` AS `3PP`,`plays_in`.`Assists` AS `Assists`,`plays_in`.`PTS` AS `PTS` from `plays_in` ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `Offensive Stats`  AS  select `Plays_In`.`Player_ID` AS `Player_ID`,`Plays_In`.`FGP` AS `FGP`,`Plays_In`.`3PP` AS `3PP`,`Plays_In`.`Assists` AS `Assists`,`Plays_In`.`PTS` AS `PTS` from `Plays_In` ;
 
 --
 -- Indexes for dumped tables
