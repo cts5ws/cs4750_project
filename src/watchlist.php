@@ -160,29 +160,14 @@
     			 <h4>Build your best roster to beat the best roster.</h4>
     		</div>
     	</div>
-    <div class="row">
-    	<div class='col-lg-12 text-center'>	
 
-			<h3>My Watchlists:</h3>
-			<form action="exportWatchlist.php" method="post">
-		        <select id="watchlist" name="outlist">
-		        </select>
-		        <input type="submit" name="load" class="btn btn-primary" value="Share">
-		    </form>
-
-		</div>
-	</div>
 	<div class="row">
-		<div class="col-lg-12 text-center">
-			<br>
-			<a href='addWatchlist.php' class="btn btn-info">Create a Watchlist</a>
-			<a href='removeWatchlist.php' class="btn btn-info">Remove Watchlist</a>
-			<br>
-		</div>
+
 	</div>
 
         <div class="row">
             <div class="col-lg-12">
+            	<h3>My Watchlists:</h3>
             	<br>
             	<br>
                 <div class="table-responsive">          
@@ -244,9 +229,9 @@
     </div>
     </div> <!-- end row -->
             <div class='row'>
-            	<div class='col-lg-12 text-center'>
-            	<br>
-            	<h4>Add Player:</h4>
+
+            	<div class='col-lg-5 text-center'>
+              	<h3>Add Player:</h3>
             	<form action="handleAddDrop.php" method="post">
 					        <select id="player" name="player">
 					        </select>
@@ -263,10 +248,29 @@
 			    			<br>
 
 				</div>
+				<div class='col-lg-3 text-center'>	
+
+						<h3>Share Watchlist:</h3>
+						<form action="exportWatchlist.php" method="post">
+					        <select id="watchlist" name="outlist">
+					        </select>
+					        <input type="submit" name="load" class="btn btn-primary" value="Share">
+					    </form>
+
+				</div>
+						<div class="col-lg-4 text-center">
+							<h3>Manage Lists:</h3>
+							<a href='addWatchlist.php' class="btn btn-info">Create a Watchlist</a>
+							<a href='removeWatchlist.php' class="btn btn-info">Remove Watchlist</a>
+							<br>
+						</div>
 
 
 
             </div>
+
+
+
 
         </div>
     </div>
