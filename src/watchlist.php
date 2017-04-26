@@ -161,9 +161,14 @@
     	</div>
     <div class="row">
     	<div class='col-lg-12 text-center'>	
+
 			<h3>My Watchlists</h3>
+			<form action="#" method="post">
 		        <select id="watchlist">
 		        </select>
+		        <input type="submit" name="load" class="btn btn-info" value=">>">
+		    </form>
+		    
 		</div>
 	</div>
 	<div class="row">
