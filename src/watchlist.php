@@ -175,7 +175,7 @@
                 </div>
             </div>
             <div class='row'>
-            	<div class='col-lg-4'>
+            	<div class='col-lg-3'>
             	<h4>Add Players</h4>
             	</div>
             	<div class='col-lg-4'>	
