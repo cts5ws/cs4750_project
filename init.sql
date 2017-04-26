@@ -93,7 +93,7 @@ DELIMITER ;
 -- Stand-in structure for view `defensive stats`
 -- (See below for the actual view)
 --
-CREATE TABLE `defensive stats` (
+CREATE TABLE `Defensive Stats` (
 `Player_ID` int(10)
 ,`Rebounds` int(5)
 ,`Steals` int(5)
