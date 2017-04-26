@@ -81,7 +81,7 @@ if(!isset($_SESSION["login"])){
                 <div class= "col-lg-4 text-center">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h4><i class="fa fa-fw fa-dribbble"></i> Teams</h4>
+                        <h2><font color=darkorange><i class="fa fa-fw fa-dribbble"></i></font> Teams</h2>
                     </div>
                     <div class="panel-body">
                         <br>
@@ -95,7 +95,7 @@ if(!isset($_SESSION["login"])){
             	<div class= "col-lg-4 text-center">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h4><i class="fa fa-fw fa-list"></i> Watchlist</h4>
+                        <h2><font color=darkorange><i class="fa fa-fw fa-list"></i></font> Watchlist</h2>
                     </div>
                     <div class="panel-body">
                         <br>
@@ -109,7 +109,7 @@ if(!isset($_SESSION["login"])){
             	<div class= "col-lg-4 text-center">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h4><i class="fa fa-fw fa-users"></i> League Play</h4>
+                        <h2><font color=darkorange><i class="fa fa-fw fa-users"></i></font> League Play</h2>
                     </div>
                     <div class="panel-body">
                         <br>

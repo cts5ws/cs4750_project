@@ -288,27 +288,28 @@
 
     <div class="row top100" style="text-align: center;">
         <br>
-        <button onclick="updateWatchlist();" type="button" class="btn btn-primary" >Swap Watchlist</button>
+        <button onclick="updateWatchlist();" type="button" class="btn btn-info" >Swap Watchlist</button>
     </div>
 
-    <br><br>
+    <br>
 
     <div class='row'>
-        <h3 align="center">League Management</h3>
-        <div class='col-lg-6 text-center'>
-            <h3>Edit League</h3>
+        
+        
+        <div class='col-lg-12 text-center'>
+            <h2>View Leagues</h2>
+
             <div id="league_management_select">
                 <select id="my_leagues">
                 </select>
-               
-            
+                <button class="btn btn-info" onclick="getData();">>></button>
+                
             </div>
             <br>
-            <a href="createLeague.php"><button type="button" class="btn btn-info" >Create League</button></a>
-            <a href="removeLeague.php"><button type="button" class="btn btn-danger" >Remove League</button></a>
+           
 
         </div>
-        <div class='col-lg-6 text-center'>
+        <div class='col-lg-12 text-center'>
              <div id="tables">
                 <table id="my_league_table" class="table table-hover" style="width: 40%" align="center">
                     <thead>
@@ -322,15 +323,25 @@
             </div>
             <input id="username" name="username" type="text">
            
-            <button onclick="addFan();" type="button" class="btn btn-info" >Add User</button>
-            <button onclick="removeFan();" type="button" class="btn btn-danger" >Remove User</button>
+            <button onclick="addFan();" type="button" class="btn btn-primary" >+ Add User</button>
+            <button onclick="removeFan();" type="button" class="btn btn-danger" >- Remove User</button>
          </div>
 
     </div>
+
+    <div class='row'>
+        <div class='col-lg-12 text-center'>
+            <h3 align="center">League Management</h3>
+            <a href="createLeague.php"><button type="button" class="btn btn-primary" >+ Create League</button></a>
+            <a href="removeLeague.php"><button type="button" class="btn btn-danger" >- Remove League</button></a>
+        </div>
+    </div>
+
+
     <br>
     <br>
     <div align="center">
-        <button class="btn btn-primary" onclick="getData();">Load Team Data</button>
+       
     </div>
 
   </div>
