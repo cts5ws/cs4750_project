@@ -32,4 +32,7 @@ if($rowcount == 0){
  header("Refresh:0; url=home.php");
 }
 
+$query->close();
+$con->close();
+
 ?>
