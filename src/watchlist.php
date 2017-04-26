@@ -52,9 +52,35 @@
                     }
             });
         }
-
         getPlayers();
     </script>
+
+
+    <script>
+    	$(document).ready();
+    	function getWatchlist(){
+			$.ajax({
+                url : "loadLists.php",
+                success :
+                    function(data){
+
+                        console.log(data);
+
+                        var lists = JSON.parse(data);
+
+                        var arrayLength = lists.length;
+                        for(var i = 0; i < arrayLength; i++){
+                            $('#watchlist').append($('<option>', {
+                                value : lists[i]["Watchlist_ID"],
+                                text : lists[i]["Watchlist_Name"]
+                            }));
+                        }
+                    }
+            });
+    	}
+    	getWatchlist();
+    </script>
+
 
 </head>
 
@@ -98,11 +124,31 @@
     </nav>
 
     <div class="container">
+    	<div class="row">
+    		<div class="col-lg-12">
+    			 <h1><i class="fa fa-fw fa-list"></i> Watchlist Page</h1>
+    		</div>
+    	</div>
+    <div class="row">
+    	<div class='col-lg-12 text-center'>	
+			<h3>My Watchlists</h3>
+		        <select id="watchlist">
+		        </select>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-12 text-center">
+			<br>
+			<a href='#' class="btn btn-primary">Add New Watchlist</a>
+			<a href='#' class="btn btn-primary">Remove Watchlist</a>
+			<br>
+		</div>
+	</div>
+
         <div class="row">
             <div class="col-lg-12">
-
-                <h1><i class="fa fa-fw fa-list"></i> Watchlist Page</h1>
-
+            	<br>
+            	<br>
                 <div class="table-responsive">          
 				  <table class="table table-hover">
 				  	<thead>
@@ -116,8 +162,6 @@
 				  	</thead>
 				  	<tbody>
 				  		<tr>
-
-
                 <?php
                 //echo "<table style='border: solid 1px black;'>";
                 class TableRows extends RecursiveIteratorIterator { 
@@ -179,6 +223,7 @@
             </div>
             <div class='row'>
             	<div class='col-lg-3'>
+            	<br>
             	<h4>Add Players</h4>
             	</div>
             	<div class='col-lg-4'>	
@@ -187,8 +232,9 @@
 					        </select>
 				</div>
 					<br>
-            		<a href='#' class="btn btn-primary">Add</a>
-            	
+            		<a href='#' class="btn btn-primary">Add Player</a>
+            		<a href='#' class="btn btn-primary">Drop Player</a>
+
             </div>
 
         </div>
