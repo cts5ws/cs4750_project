@@ -13,7 +13,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>My Watchlist</title>
+    <title>Create Watchlist</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -28,6 +28,12 @@
 <body>
 <div class='container'>
 	<div class='row'>
+		<div class='col-lg-12 text-center'>
+			<h2>Create A New Watchlist</h2>
+		</div>
+	</div>
+
+	<div class='row'>
 		<div class='col-lg-12'>
 			<form name="createList" action="createList.php" method="post">
 				<div class="form-group">
@@ -36,6 +42,8 @@
 				</div>
 				<input type="submit" class="btn btn-info" value="Create Watchlist!">
 			</form>
+        	<a href='watchlist.php' class="btn btn-danger">Cancel</a>
+
 		</div>
 	</div>
 </div>

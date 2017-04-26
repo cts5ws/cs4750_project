@@ -18,6 +18,7 @@ $result = mysqli_query($con, "Select Watchlist_ID from Watchlist where Watchlist
 $result = mysqli_fetch_assoc($result);
 $newID = $result["Watchlist_ID"];
 
+//update creates
 mysqli_query($con, "insert into Creates (Fan_ID, Watchlist_ID) values ('$fan_id', '$newID')");
 
 
