@@ -167,7 +167,7 @@
 			<form action="exportWatchlist.php" method="post">
 		        <select id="watchlist" name="outlist">
 		        </select>
-		        <input type="submit" name="load" class="btn btn-primary" value=">>">
+		        <input type="submit" name="load" class="btn btn-primary" value="Share">
 		    </form>
 
 		</div>
@@ -194,6 +194,7 @@
 					        <th>Position</th>
 					        <th>Year</th>
 					        <th>Rating</th>
+					        <th>Watchlist</th>
 					    </tr>
 				  	</thead>
 				  	<tbody>
@@ -225,7 +226,7 @@
 
                     $con = new PDO("mysql:host=$SERVER;dbname=$DATABASE", $USERNAME, $PASSWORD);
                     $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                    $sql = "SELECT Name, Number, Position, Year, Rating FROM Watchlist NATURAL JOIN SelectedFor NATURAL JOIN Player NATURAL JOIN Creates where Fan_ID = $fan_id";
+                    $sql = "SELECT Name, Number, Position, Year, Rating, Watchlist_Name FROM Watchlist NATURAL JOIN SelectedFor NATURAL JOIN Player NATURAL JOIN Creates where Fan_ID = $fan_id ORDER BY Watchlist_ID DESC";
 				    $stmt = $con->prepare ($sql); 
                     $stmt->execute();
 
