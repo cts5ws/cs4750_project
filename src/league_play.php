@@ -254,14 +254,14 @@
             <div class="col-lg-12">
 
                 <h1><i class="fa fa-fw fa-users"></i> League Play</h1>
-                <h4>Who has the best Roster in the ACC?</h4>
+                <h4><font color=darkorange>Who has the best Roster in the ACC?</font></h4>
 			
 			</div>
         </div>
-    </div>
+  
 
 
-    <h3 align="center">My Leagues</h3>
+    <h2 align="center">My Leagues</h2>
     <div align="center" id="league_select">
         <select id="league">
         </select>
@@ -287,61 +287,53 @@
     </div>
 
     <div class="row top100" style="text-align: center;">
-        <button onclick="updateWatchlist();" type="button" class="btn btn-primary" >Change Your Watchlist for This League</button>
+        <br>
+        <button onclick="updateWatchlist();" type="button" class="btn btn-primary" >Swap Watchlist</button>
     </div>
 
     <br><br>
 
-    <h3 align="center">League Management</h3>
-    <div align="center" id="league_management_select">
-        <select id="my_leagues">
-        </select>
-    </div>
+    <div class='row'>
+        <h3 align="center">League Management</h3>
+        <div class='col-lg-6 text-center'>
+            <h3>Edit League</h3>
+            <div id="league_management_select">
+                <select id="my_leagues">
+                </select>
+               
+            
+            </div>
+            <br>
+            <a href="createLeague.php"><button type="button" class="btn btn-info" >Create League</button></a>
+            <a href="removeLeague.php"><button type="button" class="btn btn-danger" >Remove League</button></a>
 
-    <br>
-
-    <div class="row top100" style="text-align: center;">
-        <a href="createLeague.php"><button type="button" class="btn btn-primary" >Create League</button></a>
-    </div>
-
-    <div class="row top100" style="text-align: center;">
-        <a href="removeLeague.php"><button type="button" class="btn btn-primary" >Remove League</button></a>
-    </div>
-
-    <div id="tables">
-        <table id="my_league_table" class="table table-hover" style="width: 40%" align="center">
-            <thead>
-            <tr>
-                <th>Username</th>
-            </tr>
-            </thead>
-            <tbody>
-            </tbody>
-        </table>
-    </div>
-
-    <div align="center">
-        <input id="username" name="username" type="text">
-
-        <br>
-        <br>
-
-        <div class="row top100" style="text-align: center;">
-            <button onclick="addFan();" type="button" class="btn btn-primary" >Add User</button>
         </div>
-
-
-        <div class="row top100" style="text-align: center;">
-            <button onclick="removeFan();" type="button" class="btn btn-primary" >Remove User</button>
-        </div>
+        <div class='col-lg-6 text-center'>
+             <div id="tables">
+                <table id="my_league_table" class="table table-hover" style="width: 40%" align="center">
+                    <thead>
+                    <tr>
+                        <th>Username</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+            <input id="username" name="username" type="text">
+           
+            <button onclick="addFan();" type="button" class="btn btn-info" >Add User</button>
+            <button onclick="removeFan();" type="button" class="btn btn-danger" >Remove User</button>
+         </div>
 
     </div>
-
     <br>
     <br>
     <div align="center">
         <button class="btn btn-primary" onclick="getData();">Load Team Data</button>
     </div>
+
+  </div>
 
 </body>
 </html>

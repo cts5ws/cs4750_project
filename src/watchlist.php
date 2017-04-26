@@ -157,19 +157,18 @@
     	<div class="row">
     		<div class="col-lg-12">
     			 <h1><i class="fa fa-fw fa-list"></i>Watchlist Manager</h1>
-    			 <h4>Build your best roster to beat the best roster.</h4>
+    			 <h4><font color=darkorange>Build your best roster to beat the best roster.</font></h4>
     		</div>
     	</div>
 
 	<div class="row">
-
+		<div class="col-lg-12 text-center">
+			<h2>My Players:</h2>
+		</div>
 	</div>
 
         <div class="row">
             <div class="col-lg-12">
-            	<h3>My Watchlists:</h3>
-            	<br>
-            	<br>
                 <div class="table-responsive">          
 				  <table class="table table-hover">
 				  	<thead>
@@ -261,7 +260,7 @@
 						<div class="col-lg-4 text-center">
 							<h3>Manage Lists:</h3>
 							<a href='addWatchlist.php' class="btn btn-info">Create a Watchlist</a>
-							<a href='removeWatchlist.php' class="btn btn-info">Remove Watchlist</a>
+							<a href='removeWatchlist.php' class="btn btn-danger">Remove Watchlist</a>
 							<br>
 						</div>
 

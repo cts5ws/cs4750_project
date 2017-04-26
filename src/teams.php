@@ -161,8 +161,8 @@
         <div class="row">
             <div class="col-lg-12">
 
-                <h1><i class="fa fa-fw fa-dribbble"></i> Team Viewer</h1>
-                <h4>Keep up with your favorite Ballers!</h4>
+                <h1><i class="fa fa-fw fa-dribbble"></i>Team Viewer</h1>
+                <h4><font color=darkorange>Keep up with your favorite Ballers!</font></h4>
 			
 			</div>
         </div>
